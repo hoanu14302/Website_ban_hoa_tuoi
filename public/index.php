@@ -1,7 +1,7 @@
 <?php 
-require("../model/database.php");
-require("../model/danhmuc.php");
-require("../model/mathang.php");
+require("../../model/database.php");
+require("../../model/danhmuc.php");
+require("../../model/mathang.php");
 
 
 $dm = new DANHMUC();
