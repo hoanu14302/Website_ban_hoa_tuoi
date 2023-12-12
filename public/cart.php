@@ -1,4 +1,4 @@
-<?php include("inc/top.php"); ?>
+<?php include("include/top.php"); ?>
 <?php
 if (demhangtronggio() == 0) { ?>
     <h3 class="text-info">Giỏ hàng rỗng!</h3>
@@ -9,6 +9,7 @@ if (demhangtronggio() == 0) { ?>
     <form action="index.php">
         <table class="table table-hove">
             <tr>
+                <th>ID</th>
                 <th>Hình ảnh</th>
                 <th>Tên hàng</th>
                 <th>Đơn giá</th>
@@ -17,8 +18,9 @@ if (demhangtronggio() == 0) { ?>
             </tr>
             <?php foreach ($giohang as $id => $mh) : ?>
                 <tr>
+                    <td><?php echo $mh["id"];?></td>
                     <td><img width="50" src="../<?php echo $mh["hinhanh"]; ?>" alt=""> </td>
-                    <td><?php echo $mh["tenmathang"]; ?></td>
+                    <td><?php echo $mh["tensp"]; ?></td>
                     <td><?php echo number_format($mh["giaban"]); ?>đ</td>
                     <td><input type="number" name="mh[<?php echo $id; ?>]" id="" value="<?php echo $mh["soluong"]; ?>"> </td>
                     <td><?php echo number_format($mh["thanhtien"]); ?>đ</td>
@@ -46,4 +48,4 @@ if (demhangtronggio() == 0) { ?>
     </form>
 <?php } //end if 
 ?>
-<?php include("inc/bottom.php"); ?>
+<?php include("include/bottom.php"); ?>
