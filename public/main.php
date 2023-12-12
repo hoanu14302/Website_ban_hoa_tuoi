@@ -2,15 +2,15 @@
 include("inc/top.php");
 ?>
 <?php
-foreach ($phanloai as $l) {
+foreach ($danhmuc as $dm) {
     $i = 0;
 ?>
-    <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $l["id"]; ?>">
-            <?php echo $l["tenpl"]; ?></a></h3>
+    <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $dm["id"]; ?>">
+            <?php echo $dm["tenpl"]; ?></a></h3>
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         <?php
         foreach ($sanpham as $s) {
-            if ($s["phanloaisp"] == $l["id"] && $i < 4) {
+            if ($s["phanloaisp"] == $dm["id"] && $i < 4) {
                 $i++;
         ?>
                 <div class="col mb-5">
@@ -64,7 +64,7 @@ foreach ($phanloai as $l) {
         echo "<p>Danh mục hiện chưa có sản phẩm.</p>";
     else
     ?>
-    <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder" href="index.php?action=group&id=<?php echo $l["id"]; ?>">Xem thêm <?php echo $l["tenpl"]; ?></a></div>
+    <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder" href="index.php?action=group&id=<?php echo $dm["id"]; ?>">Xem thêm <?php echo $dm["tenpl"]; ?></a></div>
 <?php
 }
 ?>
