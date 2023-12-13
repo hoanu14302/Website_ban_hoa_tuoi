@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-md-6 text-light">
         <a href="index.php" class="text-decoration-none text-muted">
-          <h4><img src="">
+          <h4><img src="../img/logo.png" width="20%">
             Elko Garden - Cửa hàng hoa tươi
           </h4>
         </a>
