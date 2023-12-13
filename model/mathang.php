@@ -102,7 +102,8 @@ class MATHANG
     public function settrue_false_km($value)
     {
         $this->true_false_km = $value;
-    }public function getkhuyenmai_id()
+    }
+    public function getkhuyenmai_id()
     {
         return $this->khuyenmai_id;
     }

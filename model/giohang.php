@@ -34,12 +34,12 @@ function laygiohang()
 
     //Tạo mảng rỗng để lưu danh sách sản phẩm trong giỏ
     $mh = array();
-    $mh_db = new SANPHAM();
+    $mh_db = new MATHANG();
 
     //Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
     foreach ($_SESSION['giohang'] as $id => $soluong) {
         // Gọi hàm lấy thông tin của sản phẩm theo mã sản phẩm
-        $m = $mh_db->laysanphamtheoid($id);
+        $m = $mh_db->laymathangtheoid($id);
         $dongia = $m['giaban'];
         $solg = intval($soluong);
         // Tính tiền

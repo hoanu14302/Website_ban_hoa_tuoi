@@ -1,8 +1,8 @@
 <?php
-class DANHMUC
+class QUYEN
 {
     private $id;
-    private $tendm;
+    private $tenquyen;
 
     public function getid()
     {
@@ -14,22 +14,22 @@ class DANHMUC
         $this->id = $value;
     }
 
-    public function gettendm()
+    public function gettenquyen()
     {
-        return $this->tendm;
+        return $this->tenquyen;
     }
 
-    public function settendm($value)
+    public function settenquyen($value)
     {
-        $this->tendm = $value;
+        $this->tenquyen = $value;
     }
 
     // Lấy danh sách
-    public function laydanhmuc()
+    public function layquyen()
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM danhmuc";
+            $sql = "SELECT * FROM quyen";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -43,11 +43,11 @@ class DANHMUC
 
 
     // Lấy danh mục theo id
-    public function laydanhmuctheoid($id)
+    public function layquyentheoid($id)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM danhmuc WHERE id=:id";
+            $sql = "SELECT * FROM quyen WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $cmd->execute();
@@ -60,13 +60,13 @@ class DANHMUC
         }
     }
     // Thêm mới
-    public function themdanhmuc($danhmuc)
+    public function themquyen($quyen)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "INSERT INTO danhmuc(tendm) VALUES(:tendm)";
+            $sql = "INSERT INTO quyen(tenquyen) VALUES(:tenquyen)";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":tendm", $danhmuc->tendm);
+            $cmd->bindValue(":tenquyen", $quyen->tenquyen);
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
@@ -76,13 +76,13 @@ class DANHMUC
         }
     }
     // Xóa 
-    public function xoadanhmuc($danhmuc)
+    public function xoaquyen($quyen)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "DELETE FROM danhmuc WHERE id=:id";
+            $sql = "DELETE FROM quyen WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":id", $danhmuc->id);
+            $cmd->bindValue(":id", $quyen->id);
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
@@ -92,14 +92,14 @@ class DANHMUC
         }
     }
     // Cập nhật 
-    public function suadanhmuc($danhmuc)
+    public function suaquyen($quyen)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "UPDATE danhmuc SET tendm=:tendm WHERE id=:id";
+            $sql = "UPDATE quyen SET tenquyen=:tenquyen WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":tendm", $danhmuc->tendm);
-            $cmd->bindValue(":id", $danhmuc->id);
+            $cmd->bindValue(":tenquyen", $quyen->tenquyen);
+            $cmd->bindValue(":id", $quyen->id);
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
