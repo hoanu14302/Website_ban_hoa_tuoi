@@ -1,4 +1,4 @@
-<?php include("inc/top.php"); ?>
+<?php include("include/top.php"); ?>
 
 <h3 class="text-info"><?php echo $tenpl; ?></h3>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -60,4 +60,4 @@
     <li class="page-item"><a class="page-link" href="#"><i class="bi bi-caret-right-fill"></i></a></li>
 </ul>
 
-<?php include("inc/bottom.php"); ?>
+<?php include("include/bottom.php"); ?>

@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <h4 class="text-info">Danh sách danh mục</h4> 
 <table class="table table-hover">
@@ -53,4 +53,4 @@
 </div>
 
 
-<?php include("../inc/bottom.php"); ?>
+<?php include("../include/bottom.php"); ?>
