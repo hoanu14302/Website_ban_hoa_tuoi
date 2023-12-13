@@ -51,7 +51,7 @@
         </a>
         <p class="text-decoration-none text-muted">
           <b><i>Địa chỉ:</i></b> 18 Ung Văn Khiêm, phường Đông Xuyên, TP Long Xuyên, An Giang<br>
-          <b><i>Điện thoại:</i></b> 076 3841190<br>
+          <b><i>Điện thoại:</i></b> 076 384 1190<br>
           <b><i>Email:</i></b> elkogarden@gmail.com
         </p>
       </div>
