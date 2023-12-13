@@ -48,7 +48,7 @@
     <?php
         endforeach;
     } else {
-        echo "<p>Loại cây này hiện chưa có sản phẩm. Vui lòng xem phân loại khác...</p>";
+        echo "<p>Loại hoa này hiện chưa có sản phẩm. Vui lòng xem phân loại khác...</p>";
     }
     ?>
 </div>
