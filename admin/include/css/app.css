@@ -83,7 +83,7 @@
     --bs-body-bg: #f5f7fb;
     --bs-body-bg-rgb: 245, 247, 251;
     --bs-emphasis-color: #000;
-    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-emphasis-color-rgb: #000;
     --bs-secondary-color: rgba(73, 80, 87, .75);
     --bs-secondary-color-rgb: 73, 80, 87;
     --bs-secondary-bg: #e9ecef;
@@ -4510,7 +4510,7 @@ fieldset:disabled .btn {
 }
 
 .navbar-toggler {
-    background-color: transparent;
+    background-color: burlywood;
     border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
     border-radius: var(--bs-navbar-toggler-border-radius);
     color: var(--bs-navbar-color);

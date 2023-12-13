@@ -14,17 +14,17 @@
     <body id="top">
         
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #fff4bd;">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><i class="bi bi-shop-window"></i>Elko Shop</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" href="index.php" style="color: black;"><i class="bi bi-shop-window"></i>Elko Shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"  style="background-color: burlywood;"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Trang chính</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php" style="color: black;">Trang chính</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!" style="color: black;">Giới thiệu</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục sản phẩm</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">                                
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Danh mục sản phẩm</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: black;">                                
                                 <?php foreach ($danhmuc as $d): ?>
                                     <li><a class="dropdown-item" href="?action=group&id=<?php echo $d["id"]; ?>">
                                         <?php echo $d["tendanhmuc"]; ?></a></li>
@@ -33,8 +33,8 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
-                        <a href="#" class="btn btn-outline-light" ><i class="bi bi-cart3"></i> Đặt hàng
+                        <a href="#" class="btn btn-outline-dark" style="color: black;"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
+                        <a href="#" class="btn btn-outline-dark" style="color: black;"><i class="bi bi-cart3"></i> Đặt hàng
                          <span class="badge bg-danger text-white ms-1 rounded-pill">0</span></a>
                     </div>
                 </div>

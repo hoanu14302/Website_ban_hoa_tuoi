@@ -39,18 +39,15 @@
 </section>
 
 <!-- Footer-->
-<footer class="py-5 bg-info">
+<footer class="py-5" style="background-color: #fff4bd;">
   <div class="text-center mb-5"><a class="text-warning" href="#top"><i class="bi bi-chevron-up" style="font-size: 3rem; font-weight: bold; color:white;"></i></a></div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-6 text-light">
         <a href="index.php" class="text-decoration-none text-white">
-          <h4><span class="badge text-white bg-success">E</span>
-            <span class="badge text-white bg-danger">L</span>
-            <span class="badge text-white bg-warning">K</span>
-            <span class="badge text-white bg-dark">O</span>
-            Shop - Cửa hàng hoa tươi Elko
+          <h4><img src="">
+            Elko Garden - Cửa hàng hoa tươi
           </h4>
         </a>
         <p><b><i>Địa chỉ:</i></b>18 Ung Văn Khiêm, phường Đông Xuyên, TP Long Xuyên, An Giang<br>
