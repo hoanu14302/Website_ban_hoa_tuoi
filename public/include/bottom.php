@@ -45,12 +45,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 text-light">
-        <a href="index.php" class="text-decoration-none text-white">
+        <a href="index.php" class="text-decoration-none text-muted">
           <h4><img src="">
             Elko Garden - Cửa hàng hoa tươi
           </h4>
         </a>
-        <p><b><i>Địa chỉ:</i></b>18 Ung Văn Khiêm, phường Đông Xuyên, TP Long Xuyên, An Giang<br>
+        <p class="text-decoration-none text-muted">
+          <b><i>Địa chỉ:</i></b>18 Ung Văn Khiêm, phường Đông Xuyên, TP Long Xuyên, An Giang<br>
           <b><i>Điện thoại:</i></b>076 3841190<br>
           <b><i>Email:</i></b> shop.elko@gmail.com
         </p>
@@ -71,7 +72,7 @@
       </div>
     </div>
     <hr>
-    <p class="m-0 text-center text-warning fw-bolder">Copyright &copy; Elko Shop 2023</p>
+    <p class="m-0 text-center text-warning fw-bolder">Copyright &copy; Elko Garden 2023</p>
   </div>
 </footer>
 
