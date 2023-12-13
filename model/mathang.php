@@ -1,10 +1,10 @@
 <?php
-class SANPHAM
+class MATHANG
 {
     // khai báo các thuộc tính
     private $id;
-    private $tensp;
-    private $danhmucsp;
+    private $tenmh;
+    private $danhmuc_id;
     private $mota;
     private $giagoc;
     private $giaban;
@@ -12,6 +12,8 @@ class SANPHAM
     private $hinhanh;
     private $luotxem;
     private $luotmua;
+    private $true_false_km;
+    private $khuyenmai_id;
 
     public function getid()
     {
@@ -21,13 +23,13 @@ class SANPHAM
     {
         $this->id = $value;
     }
-    public function gettensp()
+    public function gettenmh()
     {
-        return $this->tensp;
+        return $this->tenmh;
     }
-    public function settensp($value)
+    public function settenmh($value)
     {
-        $this->tensp = $value;
+        $this->tenmh = $value;
     }
     public function getmota()
     {
@@ -69,13 +71,13 @@ class SANPHAM
     {
         $this->hinhanh = $value;
     }
-    public function getdanhmucsp()
+    public function getdanhmuc_id()
     {
-        return $this->danhmucsp;
+        return $this->danhmuc_id;
     }
-    public function setdanhmucsp($value)
+    public function setdanhmuc_id($value)
     {
-        $this->danhmucsp = $value;
+        $this->danhmuc_id = $value;
     }
     public function getluotxem()
     {
@@ -93,14 +95,28 @@ class SANPHAM
     {
         $this->luotmua = $value;
     }
-
+    public function gettrue_false_km()
+    {
+        return $this->true_false_km;
+    }
+    public function settrue_false_km($value)
+    {
+        $this->true_false_km = $value;
+    }public function getkhuyenmai_id()
+    {
+        return $this->khuyenmai_id;
+    }
+    public function setkhuyenmai_id($value)
+    {
+        $this->khuyenmai_id = $value;
+    }
 
     // Lấy danh sách
-    public function laysanpham()
+    public function laymathang()
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM sanpham ORDER BY id DESC ";
+            $sql = "SELECT * FROM mathang ORDER BY id DESC ";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -112,13 +128,12 @@ class SANPHAM
         }
     }
     // Tìm kiếm 
-    public function timkiemsanpham($search)
+    public function timkiemmathang($search)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM sanpham s, danhmuc p where s.danhmucsp = p.id AND  s.tensp like '%$search%'  "; //OR p.tenpl like '%$search%'
+            $sql = "SELECT * FROM mathang s, danhmuc p where s.danhmuc_id = p.id AND  s.tenmh like '%$search%'  ";
             $cmd = $dbcon->prepare($sql);
-           // $cmd->bindValue(":tensp", $search);
             $cmd->execute();
             $result = $cmd->fetchAll();
             return $result;
@@ -130,13 +145,13 @@ class SANPHAM
     }
 
     // Lấy danh sách mặt hàng thuộc 1 danh mục
-    public function laysanphamtheodanhmuc($danhmucsp)
+    public function laymathangtheodanhmuc($danhmuc_id)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM sanpham WHERE danhmucsp=:madm";
+            $sql = "SELECT * FROM mathang WHERE danhmuc_id=:madm";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":madm", $danhmucsp);
+            $cmd->bindValue(":madm", $danhmuc_id);
             $cmd->execute();
             $result = $cmd->fetchAll();
             return $result;
@@ -148,11 +163,11 @@ class SANPHAM
     }
 
     // Lấy mặt hàng theo id
-    public function laysanphamtheoid($id)
+    public function laymathangtheoid($id)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM sanpham WHERE id=:id";
+            $sql = "SELECT * FROM mathang WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $cmd->execute();
@@ -169,7 +184,7 @@ class SANPHAM
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "UPDATE sanpham SET luotxem=luotxem+1 WHERE id=:id";
+            $sql = "UPDATE mathang SET luotxem=luotxem+1 WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $result = $cmd->execute();
@@ -185,7 +200,7 @@ class SANPHAM
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "UPDATE sanpham SET soluongton=soluongton-:soluongmua WHERE id=:id";
+            $sql = "UPDATE mathang SET soluongton=soluongton-:soluongmua WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":soluongmua", $soluongmua);
             $cmd->bindValue(":id", $id);
@@ -199,11 +214,11 @@ class SANPHAM
     }
 
     // Lấy mặt hàng xem nhiều
-    public function laysanphamxemnhieu()
+    public function laymathangxemnhieu()
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM sanpham ORDER BY luotxem DESC LIMIT 3";
+            $sql = "SELECT * FROM mathang ORDER BY luotxem DESC LIMIT 3";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -215,21 +230,24 @@ class SANPHAM
         }
     }
     // Thêm mới
-    public function themsanpham($sanpham)
+    public function themmathang($mathang)
     {
         $dbcon = DATABASE::connect();
         try {
             $sql = "INSERT INTO 
-sanpham(tensp,danhmucsp,mota,giagoc,giaban,soluongton,hinhanh,luotxem,luotmua) 
-VALUES(:tensp,:danhmucsp,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0)";
+mathang(tenmh,danhmuc_id,mota,giagoc,giaban,soluongton,hinhanh,luotxem,luotmua) 
+VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0,:true_false_km,:khuyenmai_id)";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":tensp", $sanpham->tensp);
-            $cmd->bindValue(":danhmucsp", $sanpham->danhmucsp);
-            $cmd->bindValue(":mota", $sanpham->mota);
-            $cmd->bindValue(":giagoc", $sanpham->giagoc);
-            $cmd->bindValue(":giaban", $sanpham->giaban);
-            $cmd->bindValue(":soluongton", $sanpham->soluongton);
-            $cmd->bindValue(":hinhanh", $sanpham->hinhanh);
+            $cmd->bindValue(":tenmh", $mathang->tenmh);
+            $cmd->bindValue(":danhmuc_id", $mathang->danhmuc_id);
+            $cmd->bindValue(":mota", $mathang->mota);
+            $cmd->bindValue(":giagoc", $mathang->giagoc);
+            $cmd->bindValue(":giaban", $mathang->giaban);
+            $cmd->bindValue(":soluongton", $mathang->soluongton);
+            $cmd->bindValue(":hinhanh", $mathang->hinhanh);
+            $cmd->bindValue(":true_false_km", $mathang->true_false_km);
+            $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
+
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
@@ -239,13 +257,13 @@ VALUES(:tensp,:danhmucsp,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0)";
         }
     }
     // Xóa 
-    public function xoasanpham($sanpham)
+    public function xoamathang($mathang)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "DELETE FROM sanpham WHERE id=:id";
+            $sql = "DELETE FROM mathang WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":id", $sanpham->id);
+            $cmd->bindValue(":id", $mathang->id);
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
@@ -255,31 +273,37 @@ VALUES(:tensp,:danhmucsp,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0)";
         }
     }
     // Cập nhật 
-    public function suasanpham($sanpham)
+    public function suamathang($mathang)
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "UPDATE sanpham SET tensp=:tensp,
-            danhmucsp=:danhmucsp,
+            $sql = "UPDATE mathang SET tenmh=:tenmh,
+            danhmuc_id=:danhmuc_id,
             mota=:mota,
             giagoc=:giagoc,
             giaban=:giaban,
             soluongton=:soluongton,
             hinhanh=:hinhanh,
             luotxem=:luotxem,
-            luotmua=:luotmua
+            luotmua=:luotmua,
+            true_false_km=:true_false_km,
+            khuyenmai_id=:khuyenmai_id
+
             WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":tensp", $sanpham->tensp);
-            $cmd->bindValue(":mota", $sanpham->mota);
-            $cmd->bindValue(":giagoc", $sanpham->giagoc);
-            $cmd->bindValue(":giaban", $sanpham->giaban);
-            $cmd->bindValue(":soluongton", $sanpham->soluongton);
-            $cmd->bindValue(":danhmucsp", $sanpham->danhmucsp);
-            $cmd->bindValue(":hinhanh", $sanpham->hinhanh);
-            $cmd->bindValue(":luotxem", $sanpham->luotxem);
-            $cmd->bindValue(":luotmua", $sanpham->luotmua);
-            $cmd->bindValue(":id", $sanpham->id);
+            $cmd->bindValue(":tenmh", $mathang->tenmh);
+            $cmd->bindValue(":mota", $mathang->mota);
+            $cmd->bindValue(":giagoc", $mathang->giagoc);
+            $cmd->bindValue(":giaban", $mathang->giaban);
+            $cmd->bindValue(":soluongton", $mathang->soluongton);
+            $cmd->bindValue(":danhmuc_id", $mathang->danhmuc_id);
+            $cmd->bindValue(":hinhanh", $mathang->hinhanh);
+            $cmd->bindValue(":luotxem", $mathang->luotxem);
+            $cmd->bindValue(":luotmua", $mathang->luotmua);
+            $cmd->bindValue(":true_false_km", $mathang->true_false_km);
+            $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
+
+            $cmd->bindValue(":id", $mathang->id);
             $result = $cmd->execute();
             return $result;
         } catch (PDOException $e) {
