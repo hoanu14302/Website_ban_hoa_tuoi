@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, 
-shrink-to-fit=no">
-    <link rel="preconnect" href="https://">
-    <title>Đăng ký - Shop bán hoa tươi</title>
-    <link href="../inc/css/app.css" rel="stylesheet">
-    <script src="../inc/js/app.js"></script>
-    <link href="https://" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://" rel="stylesheet">
-
-</head>
-
+<?php include("include/top.php"); ?>
 <body>
     <main class="d-flex w-100">
         <div class="container d-flex flex-column">
@@ -75,4 +58,4 @@ shrink-to-fit=no">
     </main>
 </body>
 
-</html>
+<?php include("include/bottom.php"); ?>
