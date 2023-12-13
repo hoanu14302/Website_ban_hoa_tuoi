@@ -1,4 +1,4 @@
-<?php include("inc/top.php"); ?>
+<?php include("include/top.php"); ?>
     
   <div class="row">
     <div class="col-sm-9">      
@@ -85,4 +85,4 @@
     </div>    
   </div>
   
-<?php include("inc/bottom.php"); ?>
+<?php include("include/bottom.php"); ?>

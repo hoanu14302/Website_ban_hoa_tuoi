@@ -1,5 +1,5 @@
 <?php
-include("inc/top.php");
+include("include/top.php");
 ?>
 <?php
 foreach ($danhmuc as $dm) {
@@ -70,5 +70,5 @@ foreach ($danhmuc as $dm) {
 ?>
 
 <?php
-include("inc/bottom.php");
+include("include/bottom.php");
 ?>

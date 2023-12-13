@@ -1,5 +1,5 @@
 <div class="d-flex flex-column">
-<?php foreach($sanphamxemnhieu as $x): ?>
+<?php foreach($mathangxemnhieu as $x): ?>
 	<div style="max-height:100px"><a class="text-decoration-none" href="index.php?action=detail&id=<?php echo $x["id"]; ?>">		
 		<img style="max-width:15%" class="img-thumbnail float-start m-2" 
 			src="../<?php echo $x["hinhanh"]; ?>" 
