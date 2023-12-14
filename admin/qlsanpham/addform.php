@@ -17,7 +17,7 @@
 	</select>
 </div>
 <div class="mb-3 mt-3">
-	<label for="txttenmathang" class="form-label">Tên mặt hàng</label>
+	<label for="txttenmathang" class="form-label">Tên hoa</label>
 	<input class="form-control" type="text" name="txttenmathang" placeholder="Nhập tên" required>
 </div>
 <div class="mb-3 mt-3">
