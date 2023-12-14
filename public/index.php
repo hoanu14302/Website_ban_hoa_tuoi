@@ -193,7 +193,7 @@ switch ($action) {
         // $dhct->themdonhangct($dhctmoi);
         xoagiohang();
         // $sanpham = $sp->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
-        $sanpham = $sp->laysanpham();
+        $mathang = $sp->laysanpham();
         include("main.php");
         break;
     case "search":
