@@ -30,7 +30,7 @@ switch ($action) {
         if (isset($_REQUEST["id"])) {
             $madm = $_REQUEST["id"];
             $dmuc = $dm->laydanhmuctheoid($madm);
-            $tendm =  $dmuc["tendanhmuc"];
+            $tendm =  $dmuc["tendm"];
             $mathang = $mh->laymathangtheodanhmuc($madm);
             include("group.php");
         } else {
