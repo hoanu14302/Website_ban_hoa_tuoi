@@ -104,7 +104,7 @@ switch ($action) {
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
             $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
             if ($_SESSION["nguoidung"]["loai"] == "3") {
-                $mathang = $sp->laymathang();
+                $mathang = $mh->laymathang();
                 include("main.php");
             } else {
             }
@@ -114,7 +114,7 @@ switch ($action) {
         break;
     case "dangxuat":
         unset($_SESSION["nguoidung"]);
-        $mathang = $sp->laymathang();
+        $mathang = $mh->laymathang();
         include("main.php");
         break;
     case "dangky":
@@ -139,7 +139,7 @@ switch ($action) {
         // thêm
         $nd->themnguoidung($nguoidungmoi);
         // load 
-        $mathang = $sp->laymathang();
+        $mathang = $mh->laymathang();
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($_POST["txtemail"]);
         include("main.php");
         break;
@@ -177,10 +177,10 @@ switch ($action) {
             $ten_tk = $_POST["txtsearch"];
             if ($ten_tk != "") {
                 // lấy thông tin sản phẩm
-                $mathang = $sp->timkiemmathang($ten_tk);
+                $mathang = $mh->timkiemmathang($ten_tk);
                 include("search.php");
             } else {
-                $mathang = $sp->laymathang();
+                $mathang = $mh->laymathang();
                 include("main.php");
             }
         }
