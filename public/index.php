@@ -56,7 +56,44 @@ switch($action){
     
 
         
-        
+        case "chovaogio":
+            if (isset($_REQUEST["id"]))
+                $id = $_REQUEST["id"];
+            if (isset($_REQUEST["soluong"]))
+                $soluong = $_REQUEST["soluong"];
+            else
+                $soluong = "1";
+            if (isset($_SESSION["giohang"][$id])) {
+                $soluong += $_SESSION["giohang"][$id];
+                $_SESSION["giohang"][$id] = $soluong;
+            } else {
+                themhangvaogio($id, $soluong);
+            }
+            $giohang = laygiohang();
+            include("cart.php");
+            break;
+        case "xemgiohang":
+            $giohang = laygiohang();
+            include("cart.php");
+            break;
+        case "capnhatgio":
+            if (isset($_REQUEST["mh"])) {
+                $mh = $_REQUEST["mh"];
+                foreach ($mh as $id => $soluong) {
+                    if ($soluong > 0)
+                        capnhatsoluong($id, $soluong);
+                    else
+                        xoamotsanpham($id);
+                }
+            }
+            $giohang = laygiohang();
+            include("cart.php");
+            break;
+        case "xoagiohang":
+            xoagiohang();
+            $giohang = laygiohang();
+            include("cart.php");
+            break;
 
     default:
         break;
