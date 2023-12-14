@@ -141,7 +141,48 @@ switch ($action) {
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($_POST["txtemail"]);
         include("main.php");
         break;
+    case "hoso":
+        include("hoso.php");
+        break;
+    case "xlhoso":
+        $mand = $_POST["txtid"];
+        $email = $_POST["txtemail"];
+        $sodt = $_POST["txtsdt"];
+        $hoten = $_POST["txthoten"];
+        $hinhanh = $_POST["txthinhanh"];
+        $diachi = $_POST["txtdiachi"];
 
+        if ($_FILES["fhinhanh"]["name"] != null) {
+            $hinhanh = basename($_FILES["fhinhanh"]["name"]);
+            $duongdan = "../images/users/" . $hinhanh;
+            move_uploaded_file($_FILES["fhinhanh"]["tmp_name"], $duongdan);
+        }
+        $nd->capnhatnguoidung($mand, $email, $sodt, $hoten, $hinhanh, $diachi);
+        $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
+        include("hoso.php");
+        break;
+    case "thanhtoan":
+        // Kiểm tra hành động $action: yêu cầu đăng nhập nếu chưa xác thực
+        if ($isLogin == FALSE) {
+            include("dangnhap.php");
+        } else {
+            $giohang = laygiohang();
+            include("thanhtoan.php");
+        }
+        break;
+    case "search":
+        if (isset($_POST["timkiem"])) {
+            $ten_tk = $_POST["txtsearch"];
+            if ($ten_tk != "") {
+                // lấy thông tin sản phẩm
+                $sanpham = $sp->timkiemsanpham($ten_tk);
+                include("search.php");
+            } else {
+                $sanpham = $sp->laysanpham();
+                include("main.php");
+            }
+        }
+        break;
     default:
         break;
 }
