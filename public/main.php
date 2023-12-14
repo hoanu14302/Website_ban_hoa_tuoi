@@ -40,7 +40,7 @@ foreach ($danhmuc as $dm) {
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <?php if ($m["giaban"] != $m["giagoc"]) { ?>
+                                <?php if ($m["giaban"] < $m["giagoc"]) { ?>
                                     <span class="text-muted text-decoration-line-through"><?php echo number_format($m["giagoc"]); ?>đ</span><?php } // end if 
                                                                                                                                             ?>
                                 <span class="text-danger fw-bolder"><?php echo number_format($m["giaban"]); ?>đ</span>
