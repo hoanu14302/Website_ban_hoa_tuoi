@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         
     </head>
-    <body id="top">
+    <body id="top" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
         
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #fff4bd;">
@@ -33,8 +33,8 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
-                        <a href="#" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-cart3"></i> Đặt hàng
+                        <a href="index.php?action=dangnhap" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-person"></i> Đăng nhập</a>&nbsp;
+                        <a href="index.php?action=xemgiohang" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-cart3"></i> Đặt hàng
                          <span class="badge bg-danger text-white ms-1 rounded-pill">0</span></a>
                     </div>
                 </div>

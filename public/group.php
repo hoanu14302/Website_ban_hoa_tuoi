@@ -14,15 +14,15 @@
                     <?php } // end if 
                     ?>
                     <!-- Product image-->
-                    <a href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
-                        <img class="card-img-top" src="../<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tensp"]; ?>" />
+                    <a href="index.php?action=detail&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>">
+                        <img class="card-img-top" src="../img/hoa/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
                     </a>
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a class="text-decoration-none" href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
-                                <h5 class="fw-bolder text-info"><?php echo $m["tensp"]; ?></h5>
+                            <a class="text-decoration-none" href="index.php?action=detail&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>">
+                                <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
                             </a>
                             <!-- Product reviews-->
                             <div class="d-flex justify-content-center small text-warning mb-2">
