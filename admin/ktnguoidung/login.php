@@ -19,7 +19,7 @@ shrink-to-fit=no">
                 <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
                     <div class="d-table-cell align-middle">
                         <div class="text-center mt-4">
-                            <h1 class="h2">Xin chào!</h1>
+                            <h1 class="h2">Xin chào mừng bạn!</h1>
                             <p class="lead">Vui lòng đăng nhập để tiếp tục</p>
                         </div>
                         <div class="card">
