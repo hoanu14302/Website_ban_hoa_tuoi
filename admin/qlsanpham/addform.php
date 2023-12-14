@@ -1,6 +1,6 @@
 <?php include("../inc/top.php"); ?>
 
-<h3>Thêm mặt hàng</h3> 
+<h3>Thêm hoa mới</h3> 
 <br>
 <form method="post" enctype="multipart/form-data" action="index.php">
 <input type="hidden" name="action" value="xulythem">
