@@ -11,11 +11,15 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../images/carousel/" alt="" class="d-block w-100">
+                    <img src="../img/carousel/khuyenmai1.jpg" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../images/carousel/" alt="" class="d-block w-100">
+                    <img src="../img/carousel/khuyenmai2.jpg" alt="" class="d-block w-100">
                 </div>
+                <div class="carousel-item">
+                    <img src="../img/carousel/khuyenmai3.jpg" alt="" class="d-block w-100">
+                </div>
+
             </div>
 
             <!-- Left and right controls/icons -->

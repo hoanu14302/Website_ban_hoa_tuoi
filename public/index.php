@@ -2,12 +2,17 @@
 require("../model/database.php");
 require("../model/danhmuc.php");
 require("../model/mathang.php");
-
+require("../model/giohang.php");
+require("../model/nguoidung.php");
+require("../model/donhang.php");
+require("../model/detail_donhang.php");
+require("../model/chuongtrinhkhuyenmai.php");
 
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
 $mh = new MATHANG();
 $mathangxemnhieu = $mh->laymathangxemnhieu();
+$mathangmuanhieu = $mh->laymathangmuanhieu();
 
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];
@@ -47,45 +52,12 @@ switch($action){
             include("detail.php");
         }
         break;
-        case "chovaogio":
-            if (isset($_REQUEST["id"]))
-                $id = $_REQUEST["id"];
-            if (isset($_REQUEST["soluong"]))
-                $soluong = $_REQUEST["soluong"];
-            else
-                $soluong = "1";
-            if (isset($_SESSION["giohang"][$id])) {
-                $soluong += $_SESSION["giohang"][$id];
-                $_SESSION["giohang"][$id] = $soluong;
-            } else {
-                themhangvaogio($id, $soluong);
-            }
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
-        case "xemgiohang":
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
-        case "capnhatgio":
-            if (isset($_REQUEST["mh"])) {
-                $mh = $_REQUEST["mh"];
-                foreach ($mh as $id => $soluong) {
-                    if ($soluong > 0)
-                        capnhatsoluong($id, $soluong);
-                    else
-                        xoamotsanpham($id);
-                }
-            }
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
-        case "xoagiohang":
-            xoagiohang();
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
+
     
+
+        
+        
+
     default:
         break;
 }

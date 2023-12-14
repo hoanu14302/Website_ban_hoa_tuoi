@@ -5,7 +5,7 @@
 
 <section>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col-md-6">
         <?php include("include/carousel.php"); ?>
       </div>
@@ -28,8 +28,7 @@
 
           </div>
           <div id="menu2" class="container tab-pane fade"><br>
-            <h3>Sản phẩm xem nhiều</h3>
-            <p>Đang cập nhật...</p>
+          <?php include("include/topbuy.php"); ?>
 
           </div>
         </div>
@@ -59,7 +58,7 @@
         <h4>DANH MỤC</h4>
         <?php foreach ($danhmuc as $d) : ?>
           <a class="list-group-item" href="?action=group&id=<?php echo $d["id"]; ?>">
-            <?php echo $d["tendanhmuc"]; ?>
+            <?php echo $d["tendm"]; ?>
           </a>
         <?php endforeach; ?>
       </div>
