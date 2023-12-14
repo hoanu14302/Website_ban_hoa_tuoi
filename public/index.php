@@ -57,7 +57,6 @@ switch ($action) {
         }
         break;
     case "chovaogio":
-
         if (isset($_REQUEST["id"]))
             $id = $_REQUEST["id"];
         if (isset($_REQUEST["soluong"]))
