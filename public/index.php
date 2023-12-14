@@ -93,9 +93,7 @@ switch ($action) {
         include("cart.php");
         break;
 
-    default:
-        break;
-case "dangnhap":
+    case "dangnhap":
         include("dangnhap.php");
         break;
     case "xldangnhap":
@@ -117,7 +115,7 @@ case "dangnhap":
         $sanpham = $sp->laysanpham();
         include("main.php");
         break;
-case "dangky":
+    case "dangky":
         include("dangky.php");
         break;
     case "xldangky":
@@ -142,5 +140,8 @@ case "dangky":
         $sanpham = $sp->laysanpham();
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($_POST["txtemail"]);
         include("main.php");
-        break;        
+        break;
+
+    default:
+        break;
 }
