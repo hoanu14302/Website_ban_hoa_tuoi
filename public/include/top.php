@@ -27,7 +27,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: black;">                                
                                 <?php foreach ($danhmuc as $d): ?>
                                     <li><a class="dropdown-item" href="?action=group&id=<?php echo $d["id"]; ?>">
-                                        <?php echo $d["tendanhmuc"]; ?></a></li>
+                                        <?php echo $d["tendm"]; ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>

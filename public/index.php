@@ -5,7 +5,8 @@ require("../model/mathang.php");
 require("../model/giohang.php");
 require("../model/nguoidung.php");
 require("../model/donhang.php");
-require("../model/donhangct.php");
+require("../model/detail_donhang.php");
+require("../model/chuongtrinhkhuyenmai.php");
 
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();

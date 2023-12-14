@@ -59,7 +59,7 @@
         <h4>DANH MỤC</h4>
         <?php foreach ($danhmuc as $d) : ?>
           <a class="list-group-item" href="?action=group&id=<?php echo $d["id"]; ?>">
-            <?php echo $d["tendanhmuc"]; ?>
+            <?php echo $d["tendm"]; ?>
           </a>
         <?php endforeach; ?>
       </div>
