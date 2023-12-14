@@ -24,7 +24,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="../../public/index.php">
-					<span class="align-middle">Shop hoa tươi Elko</span>
+					<span class="align-middle">Elko Garden</span>
 				</a>
 
 				<ul class="sidebar-nav">
