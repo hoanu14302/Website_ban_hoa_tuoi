@@ -6,11 +6,12 @@
 <section>
   <div class="container-fluid">
     <div class="row" style="margin-bottom: 20px;">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <?php include("include/carousel.php"); ?>
       </div>
+<!-- 
       <div class="col-md-6 pt-2">
-        <!-- Nav tabs -->
+        Nav tabs
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-bs-toggle="tab" href="#menu1">Nổi bật</a>
@@ -20,7 +21,7 @@
           </li>
         </ul>
 
-        <!-- Tab panes -->
+        Tab panes
         <div class="tab-content">
           <div id="menu1" class="container tab-pane active"><br>
 
@@ -33,6 +34,7 @@
           </div>
         </div>
       </div>
+       -->
     </div>
   </div>
 </section>

@@ -1,9 +1,10 @@
 <div class="d-flex flex-column">
 	<?php
 	$count = 0; // Biến đếm số lượng sản phẩm
-	foreach ($danhmuc as $dm) :
+	
 		foreach ($mathangxemnhieu as $x) :
-			if ($count >= 3) break; // Nếu đã hiển thị 3 sản phẩm, thoát khỏi vòng lặp
+			foreach ($danhmuc as $dm):
+				if ($x["danhmuc_id"] == $dm["id"] AND $count >= 3) break; // Nếu đã hiển thị 3 sản phẩm, thoát khỏi vòng lặp
 	?>
 			<div style="max-height:100px"><a class="text-decoration-none" href="index.php?action=detail&danhmuc=<?php echo $dm["tendm"]; ?>&id=<?php echo $x["id"]; ?>">
 					<img style="width:100px; height: 100px;" class="img-thumbnail float-start m-2" src="../img/hoa/<?php echo $dm["tendm"]; ?>/<?php echo $x["hinhanh"]; ?>" 
