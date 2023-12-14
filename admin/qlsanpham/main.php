@@ -9,7 +9,7 @@
 <br> <br> 
 <table class="table table-hover">
 	<tr>
-		<th>Tên mặt hàng</th>
+		<th>Tên hoa</th>
 		<th>Giá bán</th>
 		<th>Số lượng</th>
 		<th>Hình ảnh</th>		
