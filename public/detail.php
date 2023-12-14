@@ -25,7 +25,7 @@
       </div>
 
     <div>
-      <h4 class="text-primary">Mô tả sản phẩm: </h4>
+      <h4 class="text-primary">Mô tả hoa: </h4>
       <p><?php echo $mhct["mota"]; ?></p>
     </div>
     <br>
@@ -58,13 +58,7 @@
                     <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
                   </a>
                   <!-- Product reviews-->
-                  <div class="d-flex justify-content-center small text-warning mb-2">
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                  </div>
+                  
                   <!-- Product price-->
                   <?php if ($m["giaban"] < $m["giagoc"]) { ?>
                     <span class="text-muted text-decoration-line-through"><?php echo number_format($m["giagoc"]); ?>đ</span><?php } // end if 
