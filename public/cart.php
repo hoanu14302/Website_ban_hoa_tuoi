@@ -18,7 +18,7 @@ if (demhangtronggio() == 0) { ?>
             <?php foreach ($giohang as $id => $mh) : ?>
                 <tr>
                     <td><?php echo $mh["id"]; ?></td>
-                    <td><img width="50" src="../img/giohang/<?php echo $dm ?>/<?php echo $mh["hinhanh"]; ?>" alt=""> </td>
+                    <td><img width="50" src="../img/giohang/<?php echo $mh["hinhanh"]; ?>" alt=""> </td>
                     <td><?php echo $mh["tenmh"]; ?></td>
                     <td><?php echo number_format($mh["giaban"]); ?>đ</td>
                     <td><input type="number" name="mh[<?php echo $id; ?>]" id="" value="<?php echo $mh["soluong"]; ?>"> </td>
