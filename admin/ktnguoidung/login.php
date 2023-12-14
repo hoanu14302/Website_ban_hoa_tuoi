@@ -43,7 +43,7 @@ shrink-to-fit=no">
                             </div>
                         </div>
                         <div class="text-center mb-3">
-                            Bạn chưa có tài khoản? <a href="index.php?action=dangky">Đăng ký</a>
+                            Bạn chưa có tài khoản? <a href="index.php?action=dangky">Đăng ký tài khoản mới</a>
                         </div>
                     </div>
                 </div>
