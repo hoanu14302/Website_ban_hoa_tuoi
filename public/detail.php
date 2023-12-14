@@ -25,7 +25,7 @@
       </div>
 
     <div>
-      <h4 class="text-primary">Mô tả sản phẩm: </h4>
+      <h4 class="text-primary">Mô tả hoa: </h4>
       <p><?php echo $mhct["mota"]; ?></p>
     </div>
     <br>
