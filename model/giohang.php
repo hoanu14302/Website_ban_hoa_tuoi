@@ -34,7 +34,6 @@ function laygiohang()
     //Tạo mảng rỗng để lưu danh sách sản phẩm trong giỏ
     $mh = array();
     $mh_db = new MATHANG();
-    $dm_db = new DANHMUC();
     //Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
     foreach ($_SESSION['giohang'] as $id => $soluong) {
         // Gọi hàm lấy thông tin của sản phẩm theo mã sản phẩm

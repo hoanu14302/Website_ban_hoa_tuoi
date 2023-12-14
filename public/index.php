@@ -18,8 +18,6 @@ $nguoidung = $nd->laydanhsachnguoidung();
 $dh = new DONHANG();
 $dhct = new DONHANGCT();
 
-// Biến $isLogin cho biết người dùng đăng nhập chưa
-$isLogin = isset($_SESSION["nguoidung"]);
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 } else {
@@ -57,6 +55,7 @@ switch ($action) {
         }
         break;
     case "chovaogio":
+
         if (isset($_REQUEST["id"]))
             $id = $_REQUEST["id"];
         if (isset($_REQUEST["soluong"]))
@@ -177,23 +176,23 @@ switch ($action) {
         //thêm đơn hàng
         $donhangmoi = new DONHANG();
         $ngay = date("Y-m-d");
-        $ghichu = " ";
-        $donhangmoi->setnguoidung_id($_POST["txtid"]);
+        $ghichu = "";
+        $donhangmoi->setnguoidung_id($_SESSION["id"]);
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
         $donhangmoi->setghichu($ghichu);
         // thêm
         $dh->themdonhang($donhangmoi);
-        //thêm đơn hàng chi tiết
-        $dhctmoi = new DONHANGCT();
+        // //thêm đơn hàng chi tiết
+        // $dhctmoi = new DONHANGCT();
         // $dhctmoi->setdonhang_id($_POST["txtid"]);
-        // $dhctmoi->setsanpham_id($ngay);
-        // $dhctmoi->setthanhtien($_POST["txttongtien"]);
+        // $dhctmoi->setsanpham_id($_SESSION["sanpham_id"]);
+        // $thanhtien = $$dhctmoi->setthanhtien($_POST["txttongtien"]);
         // $dhctmoi->setghichu($ghichu);
         // $dhct->themdonhangct($dhctmoi);
         xoagiohang();
-        // $sanpham = $sp->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
-        $mathang = $mh->laymathang();
+        // $mathang= $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
+        $mathang= $mh->laymathang();
         include("main.php");
         break;
     case "search":
@@ -202,7 +201,7 @@ switch ($action) {
             if ($ten_tk != "") {
                 // lấy thông tin sản phẩm
                 $mathang = $mh->timkiemmathang($ten_tk);
-                include("search.php");
+                include("timkiem.php");
             } else {
                 $mathang = $mh->laymathang();
                 include("main.php");
