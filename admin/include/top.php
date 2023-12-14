@@ -8,7 +8,7 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 
-	<title>Trang quản trị - Shop hoa tươi Elko</title>
+	<title>Trang quản trị - Elko Garden</title>
 
 	<link href="../inc/css/app.css" rel="stylesheet">
 	<script src="../inc/js/app.js"></script>
