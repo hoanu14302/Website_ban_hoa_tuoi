@@ -12,6 +12,7 @@ $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
 $mh = new MATHANG();
 $mathangxemnhieu = $mh->laymathangxemnhieu();
+$mathangmuanhieu = $mh->laymathangmuanhieu();
 
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];

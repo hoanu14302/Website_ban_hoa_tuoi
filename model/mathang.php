@@ -230,6 +230,23 @@ class MATHANG
             exit();
         }
     }
+
+    // Lấy mặt hàng mua nhiều
+    public function laymathangmuanhieu()
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM mathang ORDER BY luotmua DESC LIMIT 3";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
     // Thêm mới
     public function themmathang($mathang)
     {

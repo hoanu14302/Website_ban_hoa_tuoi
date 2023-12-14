@@ -21,9 +21,8 @@ foreach ($danhmuc as $dm) {
                         <?php } // end if 
                         ?>
                         <!-- Product image-->
-                        <a href="index.php?action=detail&id=<?php echo $m["id"]; ?>" >
-                            <img class="card-img-top" src="../img/hoa/<?php echo $dm["tendm"]; ?>/<?php echo $m["hinhanh"]; ?>" 
-                            alt="<?php echo $m["tenmh"]; ?>"  style="height: 300px;" />
+                        <a href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
+                            <img class="card-img-top" src="../img/hoa/<?php echo $dm["tendm"]; ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;" />
                         </a>
                         <!-- Product details-->
                         <div class="card-body p-4">
