@@ -52,12 +52,15 @@ switch ($action) {
         }
         break;
     case "chovaogio":
+
         if (isset($_REQUEST["id"]))
             $id = $_REQUEST["id"];
         if (isset($_REQUEST["soluong"]))
             $soluong = $_REQUEST["soluong"];
         else
             $soluong = "1";
+        if (isset($_REQUEST["danhmuc"]))
+            $dm = $_GET["danhmuc"];
         if (isset($_SESSION["giohang"][$id])) {
             $soluong += $_SESSION["giohang"][$id];
             $_SESSION["giohang"][$id] = $soluong;

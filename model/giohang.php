@@ -47,7 +47,7 @@ function laygiohang()
 
         // Lưu thông tin trong mảng items để hiển thị lên giỏ hàng
         $mh[$id]['id'] = $m['id'];
-        $mh[$id]['tensp'] = $m['tensp'];
+        $mh[$id]['tenmh'] = $m['tenmh'];
         $mh[$id]['hinhanh'] = $m['hinhanh'];
         $mh[$id]['giaban'] = $dongia;
         $mh[$id]['soluong'] = $solg;
