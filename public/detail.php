@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-sm-9">
-      <h3 class="text-info"><?php echo $mhct["tenmh"]; ?></h3>
+      <h3 class="text-dark"><?php echo $mhct["tenmh"]; ?></h3>
 
       <div><img width="500px" src="../img/hoa/<?php echo $dm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
 
@@ -32,7 +32,7 @@
   </div>
   <div class="col-sm-3">
 
-    <h3 class="text-warning">Cùng danh mục:</h3>
+    <h3 class="text-warning">CÙNG DANH MỤC:</h3>
 
     <?php
     foreach ($mathang as $m) :
