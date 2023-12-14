@@ -47,7 +47,7 @@
                     <div class="col-7 ">
                         <div class="d-flex">
                             <?php if (isset($_SESSION["nguoidung"])) { ?>
-                                <a href="index.php?action=hoso&id=<?php echo $_SESSION["nguoidung"]["id"]; ?>" class="text-decoration-none text-dark btn">Xin chào bạn <?php echo $_SESSION["nguoidung"]["hoten"]; ?></a>&nbsp;
+                                <a href="index.php?action=hoso&id=<?php echo $_SESSION["nguoidung"]["id"]; ?>" class="text-decoration-none text- btn">Xin chào bạn <?php echo $_SESSION["nguoidung"]["hoten"]; ?></a>&nbsp;
                                 <a href="index.php?action=dangxuat" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-box-arrow-left"></i></a>&nbsp;
                             <?php } else { ?>
                                 <a href="index.php?action=dangnhap" class="btn btn-outline-light" style="color: black; border:thin solid black;"><i class="bi bi-person"></i> </a>&nbsp;

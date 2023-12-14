@@ -16,11 +16,11 @@
                                         <input type="hidden" name="txtloai" value="3">
                                         <input type="hidden" name="txttrangthai" value="1">
                                         <div class="mb-3">
-                                            <label class="form-label">Email</label>
+                                            <label class="form-label">Email:</label>
                                             <input class="form-control form-control-lg" type="email" name="txtemail" placeholder="Nhập email" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Mật khẩu</label>
+                                            <label class="form-label">Mật khẩu:</label>
                                             <input class="form-control form-control-lg" type="password" name="txtmatkhau" placeholder="Nhập mật khẩu" />
                                         </div>
                                         <div class="my-3">
@@ -28,11 +28,11 @@
                                             <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" name="txtdiachi"  required>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Số điện thoại</label>
+                                            <label class="form-label">Số điện thoại:</label>
                                             <input class="form-control form-control-lg" type="text" name="txtsodienthoai" placeholder="Nhập số điện thoại" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Họ tên</label>
+                                            <label class="form-label">Họ tên:</label>
                                             <input class="form-control form-control-lg" type="text" name="txthoten" placeholder="Nhập họ tên" />
                                         </div>
                                         <div class="mb-3">
