@@ -9,13 +9,14 @@
             <div class="col mb-5">
                 <div class="card h-100 shadow">
                     <!-- Sale badge-->
-                    <?php if ($m["giaban"] != $m["giagoc"]) { ?>
+                    <?php if ($m["giaban"] < $m["giagoc"]) { ?>
                         <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
                     <?php } // end if 
                     ?>
                     <!-- Product image-->
                     <a href="index.php?action=detail&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>">
-                        <img class="card-img-top" src="../img/hoa/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
+                        <img class="card-img-top" src="../img/hoa/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" 
+                        alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;"/>
                     </a>
                     <!-- Product details-->
                     <div class="card-body p-4">
@@ -33,7 +34,7 @@
                                 <div class="bi-star-fill"></div>
                             </div>
                             <!-- Product price-->
-                            <?php if ($m["giaban"] != $m["giagoc"]) { ?>
+                            <?php if ($m["giaban"] < $m["giagoc"]) { ?>
                                 <span class="text-muted text-decoration-line-through"><?php echo number_format($m["giagoc"]); ?>đ</span><?php } // end if 
                                                                                                                                         ?>
                             <span class="text-danger fw-bolder"><?php echo number_format($m["giaban"]); ?>đ</span>

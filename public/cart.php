@@ -5,7 +5,6 @@ if (demhangtronggio() == 0) { ?>
     <p>Vui lòng chọn sản phẩm...</p>
 <?php } else { ?>
     <h3 class="text-info">Giỏ hàng của bạn: </h3>
-
     <form action="index.php">
         <table class="table table-hove">
             <tr>
@@ -18,7 +17,7 @@ if (demhangtronggio() == 0) { ?>
             </tr>
             <?php foreach ($giohang as $id => $mh) : ?>
                 <tr>
-                    <td><?php echo $mh["id"];?></td>
+                    <td><?php echo $mh["id"]; ?></td>
                     <td><img width="50" src="../img/hoa/<?php echo $dm ?>/<?php echo $mh["hinhanh"]; ?>" alt=""> </td>
                     <td><?php echo $mh["tenmh"]; ?></td>
                     <td><?php echo number_format($mh["giaban"]); ?>đ</td>
