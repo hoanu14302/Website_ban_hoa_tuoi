@@ -4,7 +4,7 @@
 <br>
 <a href="index.php?action=them" class="btn btn-info">
 	<i class="align-middle" data-feather="plus-circle"></i> 
-	Thêm mặt hàng
+	Thêm hoa mới
 </a>
 <br> <br> 
 <table class="table table-hover">
