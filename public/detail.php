@@ -32,7 +32,7 @@
   </div>
   <div class="col-sm-3">
 
-    <h3 class="text-warning">Cùng danh mục:</h3>
+    <h3 class="text-warning">CÙNG DANH MỤC:</h3>
 
     <?php
     foreach ($mathang as $m) :
