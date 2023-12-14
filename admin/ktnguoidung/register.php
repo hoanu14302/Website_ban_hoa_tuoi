@@ -41,15 +41,15 @@ shrink-to-fit=no">
                                             <input class="form-control form-control-lg" type="text" name="txtsodienthoai" placeholder="Nhập số điện thoại" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Địa chỉ</label>
+                                            <label class="form-label">Địa chỉ:</label>
                                             <input class="form-control form-control-lg" type="text" name="txtdiachi" placeholder="Nhập địa chỉ" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Họ tên</label>
+                                            <label class="form-label">Họ tên:</label>
                                             <input class="form-control form-control-lg" type="text" name="txthoten" placeholder="Nhập họ tên" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Hình ảnh</label>
+                                            <label class="form-label">Hình ảnh:</label>
                                             <input type="file" class="form-control" name="fhinhanh">
                                         </div>
 
