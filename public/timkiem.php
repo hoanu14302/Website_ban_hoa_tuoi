@@ -52,4 +52,4 @@
     <li class="page-item"><a class="page-link" href="#"><i class="bi bi-caret-right-fill"></i></a></li>
 </ul>
 
-<?php include("inc/bottom.php"); ?>
+<?php include("include/bottom.php"); ?>
