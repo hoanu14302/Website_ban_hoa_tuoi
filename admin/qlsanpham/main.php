@@ -1,15 +1,15 @@
 <?php include("../inc/top.php"); ?>
 
-<h3>Quản lý mặt hàng</h3> 
+<h3>Quản lý hoa tươi</h3> 
 <br>
 <a href="index.php?action=them" class="btn btn-info">
 	<i class="align-middle" data-feather="plus-circle"></i> 
-	Thêm mặt hàng
+	Thêm hoa mới
 </a>
 <br> <br> 
 <table class="table table-hover">
 	<tr>
-		<th>Tên mặt hàng</th>
+		<th>Tên hoa</th>
 		<th>Giá bán</th>
 		<th>Số lượng</th>
 		<th>Hình ảnh</th>		

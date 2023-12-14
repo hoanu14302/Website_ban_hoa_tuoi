@@ -1,11 +1,11 @@
 <?php include("../inc/top.php"); ?>
 
-<h3>Thêm mặt hàng</h3> 
+<h3>Thêm hoa mới</h3> 
 <br>
 <form method="post" enctype="multipart/form-data" action="index.php">
 <input type="hidden" name="action" value="xulythem">
 <div class="mb-3 mt-3">
-	<label for="optdanhmuc" class="form-label">Hãng sản xuất</label>
+	<label for="optdanhmuc" class="form-label">Nơi sản xuất</label>
 	<select class="form-select" name="optdanhmuc">
 	<?php
 	foreach($danhmuc as $d):
@@ -17,7 +17,7 @@
 	</select>
 </div>
 <div class="mb-3 mt-3">
-	<label for="txttenmathang" class="form-label">Tên mặt hàng</label>
+	<label for="txttenmathang" class="form-label">Tên hoa</label>
 	<input class="form-control" type="text" name="txttenmathang" placeholder="Nhập tên" required>
 </div>
 <div class="mb-3 mt-3">
