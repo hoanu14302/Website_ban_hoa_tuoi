@@ -13,13 +13,16 @@ $danhmuc = $dm->laydanhmuc();
 $mh = new MATHANG();
 $mathangxemnhieu = $mh->laymathangxemnhieu();
 $mathangmuanhieu = $mh->laymathangmuanhieu();
+$nd = new NGUOIDUNG();
+$nguoidung = $nd->laydanhsachnguoidung();
+$dh = new DONHANG();
+$dhct = new DONHANGCT();
 
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 } else {
     $action = "null";
 }
-
 
 switch ($action) {
     case "null":
@@ -81,7 +84,7 @@ switch ($action) {
                 if ($soluong > 0)
                     capnhatsoluong($id, $soluong);
                 else
-                    xoamotsanpham($id);
+                    xoamotmathang($id);
             }
         }
         $giohang = laygiohang();
@@ -92,7 +95,6 @@ switch ($action) {
         $giohang = laygiohang();
         include("cart.php");
         break;
-
     case "dangnhap":
         include("dangnhap.php");
         break;
@@ -102,7 +104,7 @@ switch ($action) {
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
             $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
             if ($_SESSION["nguoidung"]["loai"] == "3") {
-                $sanpham = $sp->laysanpham();
+                $mathang = $sp->laymathang();
                 include("main.php");
             } else {
             }
@@ -112,7 +114,7 @@ switch ($action) {
         break;
     case "dangxuat":
         unset($_SESSION["nguoidung"]);
-        $sanpham = $sp->laysanpham();
+        $mathang = $sp->laymathang();
         include("main.php");
         break;
     case "dangky":
@@ -137,7 +139,7 @@ switch ($action) {
         // thêm
         $nd->themnguoidung($nguoidungmoi);
         // load 
-        $sanpham = $sp->laysanpham();
+        $mathang = $sp->laymathang();
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($_POST["txtemail"]);
         include("main.php");
         break;
@@ -175,10 +177,10 @@ switch ($action) {
             $ten_tk = $_POST["txtsearch"];
             if ($ten_tk != "") {
                 // lấy thông tin sản phẩm
-                $sanpham = $sp->timkiemsanpham($ten_tk);
+                $mathang = $sp->timkiemmathang($ten_tk);
                 include("search.php");
             } else {
-                $sanpham = $sp->laysanpham();
+                $mathang = $sp->laymathang();
                 include("main.php");
             }
         }

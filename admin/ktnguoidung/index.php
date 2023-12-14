@@ -1,6 +1,6 @@
 <?php
-require("../../model/database.php");
-require("../../model/nguoidung.php");
+require("../model/database.php");
+require("../model/nguoidung.php");
 
 // Biến $isLogin cho biết người dùng đăng nhập chưa
 $isLogin = isset($_SESSION["nguoidung"]);

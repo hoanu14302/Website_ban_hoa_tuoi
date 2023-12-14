@@ -21,7 +21,7 @@ function capnhatsoluong($id, $soluong)
 }
 
 // Xóa một sản phẩm trong giỏ hàng
-function xoamotsanpham($id)
+function xoamotmathang($id)
 {
     if (isset($_SESSION['giohang'][$id])) {
         unset($_SESSION['giohang'][$id]);
