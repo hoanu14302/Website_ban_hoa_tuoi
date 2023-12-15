@@ -16,7 +16,7 @@ include("../include/top.php");
 	$endIndex = min($startIndex + $itemsPerPage - 1, $totalItems - 1);
 
 	// Lấy mảng danh mục cho trang hiện tại
-	$pagedMathang = array_slice($danhmuc, $startIndex, $itemsPerPage);
+	$pagedDanhmuc = array_slice($danhmuc, $startIndex, $itemsPerPage);
 
 ?>
 
