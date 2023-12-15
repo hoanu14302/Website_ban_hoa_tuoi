@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <!-- <p><a class="btn btn-info" href="index.php?action=them">Thêm khách hàng</a></p> -->
 <h4 class="text-info">Danh sách khách hàng</h4>
