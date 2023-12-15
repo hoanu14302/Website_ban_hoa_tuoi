@@ -4,7 +4,7 @@
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     <?php
     if ($mathang == null) {
-        echo "<p>Kết quả tìm kiếm không có. Vui lòng nhập từ khóa khác...</p>";
+        echo "<p>Kết quả tìm kiếm không có ! Vui lòng nhập từ khóa khác...</p>";
     } else {
         foreach ($mathang as $m) : {
             foreach ($danhmuc as $dm) :
