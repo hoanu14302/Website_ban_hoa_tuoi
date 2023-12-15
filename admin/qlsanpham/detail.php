@@ -13,4 +13,4 @@
 <a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $m["id"]; ?>"><i class="align-middle" data-feather="trash-2"></i> Xóa</a></p>	
 
 <a href="index.php">Trở về danh sách</a>
-<?php include("../inc/bottom.php"); ?>
+<?php include("../include/bottom.php"); ?>
