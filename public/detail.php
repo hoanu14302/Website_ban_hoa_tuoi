@@ -42,10 +42,6 @@
       <div>
         <div class="col mb-5">
           <div class="card h-100 shadow">
-
-          <div class="text-end mb-2"><a class="text-dark text-decoration-none fw-bolder" 
-          href="index.php?action=group&id=<?php echo $madm ?>">Xem tất cả <?php echo $dm ?></a></div>
-
             <!-- Sale badge-->
             <?php if ($m["giaban"] < $m["giagoc"]) { ?>
               <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
@@ -90,5 +86,8 @@
 
   </div>
 </div>
+
+<h6><div class="text-end mb-2"><a class=" text-decoration-none fw-bolder" style="color:#349abb;"
+          href="index.php?action=group&id=<?php echo $madm ?>">Xem tất cả <?php echo $dm ?></a></div></h6>
 
 <?php include("include/bottom.php"); ?>
