@@ -24,7 +24,7 @@ include("../include/top.php");
 <table class="table table-hover">
 	<tr><th>ID</th><th>Tên danh mục</th><th>Sửa</th><th>Xóa</th></tr>
 	<?php 
-	foreach ($danhmuc as $d) : 
+	foreach ($pagedDanhmuc as $d) : 
 		if($d["id"] == $idsua){ // hiển thị form
 	?>
 		<tr>
