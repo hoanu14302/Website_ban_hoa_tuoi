@@ -139,6 +139,18 @@ class NGUOIDUNG
             exit();
         }
     }
+    // Kiểm tra số điện thoại đã tồn tại hay chưa
+    function checkPhoneNumberExists($phoneNumber)
+    {
+        global $db;
+        $query = "SELECT COUNT(*) FROM dangky WHERE sodienthoai = :phoneNumber";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':phoneNumber', $phoneNumber);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        return $count > 0;
+    }
     // Thêm ng dùng mới, trả về khóa của dòng mới thêm
     // (SV nên truyền tham số là 1 đối tượng kiểu người dùng, không nên truyền nhiều tham số rời rạc như thế này)
     public function themnguoidung($nguoidung)
