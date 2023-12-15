@@ -25,7 +25,7 @@ switch ($action) {
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
-            if ($_SESSION["nguoidung"]["loai"] == 1 or  $_SESSION["nguoidung"]["loai"] == 2)
+            // if ($_SESSION["nguoidung"]["loai"] == 1 or  $_SESSION["nguoidung"]["loai"] == 2)
                 $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
             include("main.php");
             // } elseif( $_SESSION["nguoidung"]["loai"] == 3 ){
