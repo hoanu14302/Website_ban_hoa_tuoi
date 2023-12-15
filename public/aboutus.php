@@ -14,7 +14,7 @@
                     <p style="text-align: justify;">Chúng tôi luôn sẵn sàng phục vụ Quý khách, với sự tận tình chu đáo, bằng nhiều sản phẩm và dịch vụ đa dạng, chuyển hoa miễn phí trong các dịp lễ tết, một cách nhanh chóng nhất.</p>
 <p style="text-align: justify;">Thông điệp mà chúng tôi muốn gửi tới khách hàng là chúc Quý khách luôn vui vẻ, hạnh phúc và có cuộc sống thật tươi đẹp.</p>
                     <p style="text-align: justify;">Chúng tôi xin chân thành cảm ơn sự ủng hộ của Quý khách.</p>
-                    <img src="../images/nen_gioithieu.jpg" style="width: 100%;" alt="">
+                    <img src="../img/nen_gioithieu.jpg" style="width: 100%;" alt="">
                 </div>
             </div>
         </div>
