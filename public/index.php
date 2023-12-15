@@ -174,7 +174,7 @@ switch ($action) {
         }
         break;
     case "htdonhang":
-        //thêm đơn hàng
+        // Thêm đơn hàng mới
         $donhangmoi = new DONHANG();
         $ngay = date("Y-m-d");
         $ghichu = "";
@@ -182,18 +182,22 @@ switch ($action) {
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
         $donhangmoi->setghichu($ghichu);
-        // thêm
         $dh->themdonhang($donhangmoi);
-        // //thêm đơn hàng chi tiết
+
+        // Lấy ID của đơn hàng mới tạo
+        $donhang_id = $donhangmoi->getid();
+
+        // // Thêm đơn hàng chi tiết
         // $dhctmoi = new DONHANGCT();
-        // $dhctmoi->setdonhang_id($_POST["txtid"]);
-        // $dhctmoi->setsanpham_id($_SESSION["sanpham_id"]);
-        // $thanhtien = $$dhctmoi->setthanhtien($_POST["txttongtien"]);
-        // $dhctmoi->setghichu($ghichu);
+        // $dhctmoi->setdonhang_id($donhang_id);
+        // $dhctmoi->setmathang_id($_SESSION["mathang_id"]);
+        // $thanhtien = $dhctmoi->setthanhtien();
+        // // $dhctmoi->setghichu($ghichu);
         // $dhct->themdonhangct($dhctmoi);
+
         xoagiohang();
-        // $mathang= $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
-        $mathang= $mh->laymathang();
+        $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
+        $mathang = $mh->laymathang();
         include("main.php");
         break;
     case "search":
