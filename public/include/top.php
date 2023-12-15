@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php" style="color: black;">Trang chính</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!" style="color: black;">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php?action=aboutus" style="color: black;">Giới thiệu</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Danh mục sản phẩm</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: black;">

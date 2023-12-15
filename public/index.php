@@ -8,6 +8,7 @@ require("../model/donhang.php");
 require("../model/detail_donhang.php");
 require("../model/chuongtrinhkhuyenmai.php");
 
+
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
 $mh = new MATHANG();
@@ -215,6 +216,11 @@ switch ($action) {
             }
         }
         break;
+
+        case "aboutus": 	
+            include("aboutus.php");
+            break;
+    
     default:
         break;
 }
