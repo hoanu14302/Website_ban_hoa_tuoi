@@ -41,7 +41,7 @@ switch($action){
     case "them":
     	// gán dữ liệu từ form
     	$dmmoi = new DANHMUC();
-    	$dmmoi->settendanhmuc($_POST["ten"]);
+    	$dmmoi->settendm($_POST["ten"]);
     	// thêm
     	$dm->themdanhmuc($dmmoi);
     	// load danh sách
