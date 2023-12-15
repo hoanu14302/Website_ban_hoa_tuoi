@@ -17,7 +17,6 @@ $nd = new NGUOIDUNG();
 $nguoidung = $nd->laydanhsachnguoidung();
 $dh = new DONHANG();
 $dhct = new DONHANGCT();
-
 // Biến $isLogin cho biết người dùng đăng nhập chưa
 $isLogin = isset($_SESSION["nguoidung"]);
 

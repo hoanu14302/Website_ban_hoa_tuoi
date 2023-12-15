@@ -22,14 +22,14 @@
 	<tr>
 		<td>
 			<a href="index.php?action=chitiet&id=<?php echo $m["id"]; ?>">
-			<?php echo $m["tenmathang"]; ?>
+			<?php echo $m["tenmh"]; ?>
 			</a>	
 		</td>
 		<td><?php echo $m["giaban"]; ?></td>
 		<td><?php echo $m["soluongton"]; ?></td>
 		<td>
 			<a href="index.php?action=chitiet&id=<?php echo $m["id"]; ?>">
-			<img src="../../<?php echo $m["hinhanh"]; ?>" width="80" class="img-thumbnail"></a>
+			<img src="../../img/giohang/<?php echo $m["hinhanh"]; ?>" width="80" class="img-thumbnail"></a>
 		</td>
 		<td><a class="btn btn-warning" href="index.php?action=sua&id=<?php echo $m["id"]; ?>"><i class="align-middle" data-feather="edit"></a></td>
 		<td><a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $m["id"]; ?>"><i class="align-middle" data-feather="trash-2"></a></td>
