@@ -43,30 +43,18 @@ switch ($action) {
         }
         break;
     case "detail":
-        if (isset($_GET["id"])) {
-            $mahang = $_GET["id"];
-            $dm = $_GET["danhmuc"];
+        if (isset($_REQUEST["id"])) {
+            $mahang = $_REQUEST["id"];
             // tăng lượt xem lên 1
             $mh->tangluotxem($mahang);
             // lấy thông tin chi tiết mặt hàng
             $mhct = $mh->laymathangtheoid($mahang);
             // lấy các mặt hàng cùng danh mục
             $madm = $mhct["danhmuc_id"];
+            $dmuc = $dm->laydanhmuctheoid($madm);
+            $tendm =  $dmuc["tendm"];
             $mathang = $mh->laymathangtheodanhmuc($madm);
             include("detail.php");
-        }
-        break;
-    case "detail_search":
-        if (isset($_GET["id"])) {
-            $id_mh = $_GET["id"];
-            // tăng lượt xem lên 1
-            $mh->tangluotxem($id_mh);
-            // lấy thông tin chi tiết mặt hàng
-            $mhct = $mh->laymathangtheoid($id_mh);
-            // lấy các mặt hàng cùng danh mục
-            $madm = $mhct["danhmuc_id"];
-            $mathang = $mh->laymathangtheodanhmuc($madm);
-            include("detail_search.php");
         }
         break;
     case "chovaogio":

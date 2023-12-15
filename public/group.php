@@ -19,7 +19,7 @@
                     <?php } // end if 
                     ?>
                     <!-- Product image-->
-                    <a href="index.php?action=detail&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>">
+                    <a href="index.php?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
                         <img class="card-img-top" src="../img/hoa/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" 
                         alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;"/>
                     </a>
@@ -27,7 +27,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <a class="text-decoration-none" href="index.php?action=detail&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>">
+                            <a class="text-decoration-none" href="index.php?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
                                 <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
                             </a>
                             <!-- Product reviews-->
@@ -41,7 +41,7 @@
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-info mt-auto" href="index.php?action=chovaogio&danhmuc=<?php echo $tendm; ?>&id=<?php echo $m["id"]; ?>&soluong=1">Chọn mua</a></div>
+                        <div class="text-center"><a class="btn btn-outline-info mt-auto" href="index.php?action=chovaogio&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>&soluong=1">Chọn mua</a></div>
                     </div>
                 </div>
             </div>

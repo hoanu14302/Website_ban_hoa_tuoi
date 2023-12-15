@@ -4,7 +4,7 @@
   <div class="col-sm-9">
     <h3 class="text-dark"><?php echo $mhct["tenmh"]; ?></h3>
 
-    <div><img width="500px" src="../img/hoa/<?php echo $dm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
+    <div><img width="500px" src="../img/hoa/<?php echo $tendm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
 
     <div>
       <h4 class="text-primary">Giá bán:
@@ -53,14 +53,14 @@
             <?php } // end if 
             ?>
             <!-- Product image-->
-            <a href="?action=detail&danhmuc=<?php echo $dm ?>&id=<?php echo $m["id"]; ?>">
-              <img class="card-img-top" src="../img/hoa/<?php echo $dm ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
+            <a href="?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
+              <img class="card-img-top" src="../img/hoa/<?php echo $tendm ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
             </a>
             <!-- Product details-->
             <div class="card-body p-4">
               <div class="text-center">
                 <!-- Product name-->
-                <a class="text-decoration-none" href="?action=detail&danhmuc=<?php echo $dm ?>&id=<?php echo $m["id"]; ?>">
+                <a class="text-decoration-none" href="?action=detail&danhmuc=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
                   <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
                 </a>
                 <!-- Product reviews-->
@@ -93,6 +93,6 @@
 </div>
 
 <h6><div class="text-end mb-2"><a class=" text-decoration-none fw-bolder" style="color:#349abb;"
-          href="index.php?action=group&id=<?php echo $madm ?>">Xem tất cả<?php echo $dm ?></a></div></h6>
+          href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem tất cả<?php echo $tendm ?></a></div></h6>
 
 <?php include("include/bottom.php"); ?>

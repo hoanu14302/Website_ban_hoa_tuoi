@@ -4,6 +4,7 @@
 <h4 class="text-info">Danh sách người dùng</h4>
 <table class="table table-hover">
     <tr>
+        <th class="text-info">Hình ảnh</th>
         <th class="text-info">Email</th>
         <th class="text-info">Số điện thoại</th>
         <th class="text-info">Địa chỉ</th>
@@ -18,6 +19,7 @@
             if ($n["loai"] == $q["id"]) {
     ?>
                 <tr>
+                    <td><img src="../../img/users/<?php echo $n["hinhanh"]; ?>" alt="" srcset="" style="width: 150px;height: 150px;"></td>
                     <td><?php echo $n["email"]; ?></td>
                     <td><?php echo $n["sodienthoai"]; ?></td>
                     <td><?php echo $n["diachi"]; ?></td>

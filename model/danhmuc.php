@@ -47,7 +47,7 @@ class DANHMUC
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM danhmuc WHERE id=:id";
+            $sql = "SELECT tendm FROM danhmuc WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $cmd->execute();
