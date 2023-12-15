@@ -5,7 +5,7 @@ include("../include/top.php");
 	$itemsPerPage = 10;
 
 	// Tính toán số trang dựa trên tổng số khách hàng và số khách hàng trên mỗi trang
-	$totalItems = count($danhmuc);
+	$totalItems = count($nguoidung);
 	$totalPages = ceil($totalItems / $itemsPerPage);
 
 	// Xác định trang hiện tại từ tham số 'page' trong URL
