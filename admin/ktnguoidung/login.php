@@ -8,7 +8,7 @@ shrink-to-fit=no">
     <link rel="preconnect" href="https://">
     <title>Đăng nhập - Elko Garden</title>
     <link href="../include/css/app.css" rel="stylesheet">
-    <script src="../inc/js/app.js"></script>
+    <script src="../include/js/app.js"></script>
     <link href="https://" rel="stylesheet">
 </head>
 
