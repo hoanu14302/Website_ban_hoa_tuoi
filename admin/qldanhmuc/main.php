@@ -34,7 +34,7 @@
 	?>
 </table>
 
-<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo">Thêm mới</a><h4>
+<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo">Thêm mới danh mục</a><h4>
 
 <div id="demo" class="collapse">
 	 
