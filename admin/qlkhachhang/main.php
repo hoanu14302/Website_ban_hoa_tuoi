@@ -23,7 +23,7 @@
                     <td><?php echo $n["sodienthoai"]; ?></td>
                     <td><?php echo $n["matkhau"]; ?></td>
                     <td><?php echo $n["hoten"]; ?></td>
-                    <td><img width="50px" src="../../images/users/<?php echo $n["hinhanh"]; ?>" alt="<?php echo $n["hinhanh"]; ?>"></td>
+                    <td><img width="50px" src="../../img/users/<?php echo $n["hinhanh"]; ?>" alt="<?php echo $n["hinhanh"]; ?>" style="width: 150px;height: 150px;"></td>
                     <td><?php echo $q["tenquyen"]; ?></td>
                     <td><?php if ($n["trangthai"] == 1) { ?>
                             <dt class=" text-success font-weight">Hoạt động</dt>

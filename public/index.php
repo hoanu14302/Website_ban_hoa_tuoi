@@ -159,7 +159,7 @@ switch ($action) {
 
         if ($_FILES["fhinhanh"]["name"] != null) {
             $hinhanh = basename($_FILES["fhinhanh"]["name"]);
-            $duongdan = "../images/users/" . $hinhanh;
+            $duongdan = "../img/users/" . $hinhanh;
             move_uploaded_file($_FILES["fhinhanh"]["tmp_name"], $duongdan);
         }
         $nd->capnhatnguoidung($mand, $email, $sodt, $hoten, $hinhanh, $diachi);

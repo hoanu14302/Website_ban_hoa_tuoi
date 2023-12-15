@@ -25,7 +25,7 @@ switch($action){
         break;
 	case "xulythem":	
 		// xử lý file upload
-		$hinhanh = "images/products/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+		$hinhanh = "img/users/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
 		$duongdan = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
 		move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
 		// xử lý thêm		
@@ -87,7 +87,7 @@ switch($action){
         // upload file mới (nếu có)
         if($_FILES["filehinhanh"]["name"]!=""){
             // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
-            $hinhanh = "images/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
+            $hinhanh = "img/users/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
             $mathanghh->sethinhanh($hinhanh);
             $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
             move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
