@@ -64,9 +64,6 @@
                         </td>
                     </tr>
                 </table>
-                <div class="my-3 text-left">
-                    <input class="btn btn-primary" type="submit" value="Hoàn tất đơn hàng">
-                </div>
 
             </form>
         </div>

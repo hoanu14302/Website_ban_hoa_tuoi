@@ -140,6 +140,7 @@ switch ($action) {
         $nguoidungmoi->settrangthai($_POST["txttrangthai"]);
         $nguoidungmoi->setdiachi($_POST["txtdiachi"]);
         $nguoidungmoi->sethinhanh($hinhanh);
+
         // thêm
         $nd->themnguoidung($nguoidungmoi);
         // load 
@@ -177,29 +178,25 @@ switch ($action) {
         }
         break;
     case "htdonhang":
-        // Thêm đơn hàng mới
+        //thêm đơn hàng
         $donhangmoi = new DONHANG();
         $ngay = date("Y-m-d");
         $ghichu = "";
-        $donhangmoi->setnguoidung_id($_SESSION["id"]);
+        $donhangmoi->setnguoidung_id($_POST["txtid"]);
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
         $donhangmoi->setghichu($ghichu);
+        // thêm
         $dh->themdonhang($donhangmoi);
-
-        // Lấy ID của đơn hàng mới tạo
-        $donhang_id = $donhangmoi->getid();
-
-        // // Thêm đơn hàng chi tiết
-        // $dhctmoi = new DONHANGCT();
-        // $dhctmoi->setdonhang_id($donhang_id);
-        // $dhctmoi->setmathang_id($_SESSION["mathang_id"]);
-        // $thanhtien = $dhctmoi->setthanhtien();
-        // // $dhctmoi->setghichu($ghichu);
+        //thêm đơn hàng chi tiết
+        //$dhctmoi = new DONHANGCT();
+        // $dhctmoi->setdonhang_id($_POST["txtid"]);
+        // $dhctmoi->setmathang_id($ngay);
+        // $dhctmoi->setthanhtien($_POST["txttongtien"]);
+        // $dhctmoi->setghichu($ghichu);
         // $dhct->themdonhangct($dhctmoi);
-
         xoagiohang();
-        $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
+        // $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
         $mathang = $mh->laymathang();
         include("main.php");
         break;
@@ -217,10 +214,10 @@ switch ($action) {
         }
         break;
 
-        case "aboutus": 	
-            include("aboutus.php");
-            break;
-    
+    case "aboutus":
+        include("aboutus.php");
+        break;
+
     default:
         break;
 }
