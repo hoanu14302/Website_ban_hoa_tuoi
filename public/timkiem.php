@@ -7,9 +7,7 @@
         echo "<p>Kết quả tìm kiếm không có ! Vui lòng nhập từ khóa khác...</p>";
     } else {
         foreach ($mathang as $m) : {
-            foreach ($danhmuc as $dm) :
-                if($m["danhmuc_id"] == $dm["id"]){
-                    $tendm = $dm->laydanhmuctheoid($m["danhmuc_id"]);
+            $tendm = $dm->laydanhmuctheoid($m["danhmuc_id"]);
     ?>
                 <div class="col mb-5">
                     <div class="card h-100 shadow">
@@ -45,8 +43,7 @@
                 </div>
     <?php
             }
-            endforeach;}
-        endforeach;
+            endforeach;
     }
     ?>
 </div>

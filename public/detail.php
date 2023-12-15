@@ -93,6 +93,6 @@
 </div>
 
 <h6><div class="text-end mb-2"><a class=" text-decoration-none fw-bolder" style="color:#349abb;"
-          href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem tất cả<?php echo $tendm ?></a></div></h6>
+          href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem tất cả <?php echo $tendm ?> >></a></div></h6>
 
 <?php include("include/bottom.php"); ?>
