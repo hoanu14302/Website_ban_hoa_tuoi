@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <h3>Thêm hoa mới</h3> 
 <br>
