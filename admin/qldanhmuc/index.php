@@ -31,7 +31,7 @@ switch($action){
     	// gán dữ liệu từ form
     	$dmmoi = new DANHMUC();
     	$dmmoi->setid($_POST["id"]);
-    	$dmmoi->settendanhmuc($_POST["ten"]);
+    	$dmmoi->settendm($_POST["ten"]);
     	// sửa
     	$dm->suadanhmuc($dmmoi);
     	// load danh sách
