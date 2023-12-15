@@ -16,7 +16,7 @@
             <td><?php echo $k["ten_km"]; ?></td>
             <td><?php echo $k["mota"]; ?></td>
             <td><?php echo $k["phantramgiam"]; ?></td>
-            <td><img width="50px" src="../../img/carousel/<?php echo $k["hinhanhkm"]; ?>" alt="<?php echo $k["hinhanhkm"]; ?>" style="width: 150px;height: 150px;"></td>
+            <td><img width="50px" src="../../img/carousel/<?php echo $k["hinhanhkm"]; ?>" alt="<?php echo $k["hinhanhkm"]; ?>" style="width: 400px;height: 150px;"></td>
         </tr>
     <?php
     endforeach;
