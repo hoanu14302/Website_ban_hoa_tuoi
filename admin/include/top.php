@@ -49,9 +49,9 @@
 					</li>
 
 					<li class="sidebar-item  
-					<?php if (strpos($_SERVER["REQUEST_URI"], "qlphanloai") != false) echo "active"; ?>
+					<?php if (strpos($_SERVER["REQUEST_URI"], "qldanhmuc") != false) echo "active"; ?>
 					">
-						<a class="sidebar-link" href="../qlphanloai/index.php">
+						<a class="sidebar-link" href="../qldanhmuc/index.php">
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
 						</a>
 					</li>
