@@ -79,8 +79,8 @@
 							<i class="align-middle" data-feather="truck"></i> <span class="align-middle">Quản lý đơn hàng</span>
 						</a>
 					</li>
-					<li class="sidebar-item <?php if (strpos($_SERVER["REQUEST_URI"], "qlctkhuyenmai") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../qlctkhuyenmai/index.php">
+					<li class="sidebar-item <?php if (strpos($_SERVER["REQUEST_URI"], "chuongtrinhkhuyenmai") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../chuongtrinhkhuyenmai/index.php">
 							<i class="align-middle" data-feather="shopping-bag"></i> <span class="align-middle">Chương trình khuyến mãi</span>
 						</a>
 					</li>
