@@ -19,7 +19,7 @@ $dh = new DONHANG();
 $dhct = new DONHANGCT();
 
 // Biến $isLogin cho biết người dùng đăng nhập chưa
-$isLogin = isset($_SESSION["nguoidung"])
+$isLogin = isset($_SESSION["nguoidung"]);
 
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
