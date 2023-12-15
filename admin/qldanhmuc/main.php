@@ -12,7 +12,7 @@
 			<input type="hidden" name="action" value="capnhat">
 			<input type="hidden" name="id" value="<?php echo $d["id"]; ?>">
 			<td><?php echo $d["id"]; ?></td>
-			<td><input class="form-control" name="ten" type="text" value="<?php echo $d["tendanhmuc"]; ?>"></td>
+			<td><input class="form-control" name="ten" type="text" value="<?php echo $d["tendm"]; ?>"></td>
 			<td><input class="btn btn-success" type="submit" value="Lưu"></td>
 		</form>
 			<td><a href="index.php?action=xoa&id=<?php echo $d["id"]; ?>" class="btn btn-danger">Xóa</a></td>
