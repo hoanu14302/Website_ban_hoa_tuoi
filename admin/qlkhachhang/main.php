@@ -32,7 +32,14 @@
 
                         <?php } ?>
                     </td>
-                    <td><a href="index.php?action=khoa&id=<?php echo $n['id']; ?>&trangthai=<?php echo $n['trangthai']; ?>" class="btn btn-warning">Khóa</a></td>
+                    <td>
+                        <?php
+                        $trangthai = $n['trangthai'];
+                        $buttonText = ($trangthai == '0') ? 'Mở khóa' : 'Khóa';
+                        $buttonClass = ($trangthai == '0') ? 'btn btn-success' : 'btn btn-warning';
+                        ?>
+                        <a href="index.php?action=khoa&id=<?php echo $n['id']; ?>&trangthai=<?php echo $n['trangthai']; ?>" class="<?php echo $buttonClass; ?>"><?php echo $buttonText; ?></a>
+                    </td>
                 </tr>
     <?php
             }
