@@ -42,12 +42,12 @@
       <div>
         <div class="col mb-5">
           <div class="card h-100 shadow">
-          <!-- Expired product-->
+            <!-- Expired product-->
           <?php if ($m["soluongton"] == 0) { ?>
                             <div class="badge bg-danger text-white position-absolute" style="text-align: center; width: 150px; align-items: center;">Hết hàng</div>
                         <?php } // end if 
                         ?>  
-          <!-- Sale badge-->
+            <!-- Sale badge-->
             <?php if ($m["giaban"] < $m["giagoc"]) { ?>
               <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
             <?php } // end if 
