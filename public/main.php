@@ -5,7 +5,7 @@ include("include/top.php");
 foreach ($danhmuc as $dm) {
     $i = 0;
 ?>
-    <h3><a class="text-decoration-none text-info" href="index.php?action=group&id=<?php echo $dm["id"]; ?>">
+    <h3><a class="text-decoration-none text-dark" href="index.php?action=group&id=<?php echo $dm["id"]; ?>">
             <?php echo $dm["tendm"]; ?></a></h3>
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         <?php
