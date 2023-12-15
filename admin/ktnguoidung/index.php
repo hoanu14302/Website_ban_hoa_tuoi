@@ -25,10 +25,11 @@ switch ($action) {
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
-            $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
+            if ($_SESSION["nguoidung"]["loai"] == 1 or  $_SESSION["nguoidung"]["loai"] == 2)
+                $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
             include("main.php");
-        // } elseif( $_SESSION["nguoidung"]["loai"] == 3 ){
-        //     include("../../../public/main.php");
+            // } elseif( $_SESSION["nguoidung"]["loai"] == 3 ){
+            //     include("../../../public/main.php");
         } else {
             include("login.php");
         }
@@ -48,12 +49,12 @@ switch ($action) {
         $hoten = $_POST["txthoten"];
         $hinhanh = $_POST["txthinhanh"];
 
-        if($_FILES["fhinhanh"]["name"] != null) {
+        if ($_FILES["fhinhanh"]["name"] != null) {
             $hinhanh = basename($_FILES["fhinhanh"]["name"]);
             $duongdan = "../../images/users/" . $hinhanh;
             move_uploaded_file($_FILES["fhinhanh"]["tmp_name"], $duongdan);
         }
-        $nd->capnhatnguoidung($mand,$email,$sodt,$hoten,$hinhanh,$diachi);
+        $nd->capnhatnguoidung($mand, $email, $sodt, $hoten, $hinhanh, $diachi);
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
         include("main.php");
         break;
@@ -85,4 +86,3 @@ switch ($action) {
     default:
         break;
 }
-?>

@@ -1,4 +1,21 @@
-<?php include("include/top.php"); ?>
+<?php include("include/top.php"); 
+// Số mặt hàng trên mỗi trang
+$itemsPerPage = 10;
+
+// Tính toán số trang dựa trên tổng số mặt hàng và số mặt hàng trên mỗi trang
+$totalItems = count($mathang);
+$totalPages = ceil($totalItems / $itemsPerPage);
+
+// Xác định trang hiện tại từ tham số 'page' trong URL
+$currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+
+// Xác định chỉ mục bắt đầu và kết thúc của mặt hàng trên trang hiện tại
+$startIndex = ($currentPage - 1) * $itemsPerPage;
+$endIndex = min($startIndex + $itemsPerPage - 1, $totalItems - 1);
+
+// Lấy mảng mặt hàng cho trang hiện tại
+$pagedMathang = array_slice($mathang, $startIndex, $itemsPerPage);
+?>
 
 <h3 class="text-dark"><?php echo $tendm; ?></h3>
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -52,12 +69,18 @@
     }
     ?>
 </div>
-<ul class="pagination justify-content-center" style="margin:20px 0">
-    <li class="page-item"><a class="page-link" href="#"><i class="bi bi-caret-left-fill"></i></a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+<!-- Hiển thị phân trang -->
+<div class="pagination justify-content-center" style="margin:20px 0">
+<li class="page-item"><a class="page-link" href="#"><i class="bi bi-caret-left-fill"></i></a></li>
+	<?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+		<?php if ($i == $currentPage) : ?>
+        <li class="page-item"><a class="page-link" href="#"><?php echo $i; ?></a></li>
+		<?php else : ?>
+			<a href="index.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>	
+		<?php endif; ?>
+	<?php endfor; ?>
     <li class="page-item"><a class="page-link" href="#"><i class="bi bi-caret-right-fill"></i></a></li>
-</ul>
+
+</div>
 
 <?php include("include/bottom.php"); ?>
