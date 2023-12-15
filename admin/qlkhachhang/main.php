@@ -1,4 +1,24 @@
-<?php include("../include/top.php"); ?>
+<?php
+include("../include/top.php");
+
+	// Số khách hàng trên mỗi trang
+	$itemsPerPage = 10;
+
+	// Tính toán số trang dựa trên tổng số khách hàng và số khách hàng trên mỗi trang
+	$totalItems = count($danhmuc);
+	$totalPages = ceil($totalItems / $itemsPerPage);
+
+	// Xác định trang hiện tại từ tham số 'page' trong URL
+	$currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+
+	// Xác định chỉ mục bắt đầu và kết thúc của khách hàng trên trang hiện tại
+	$startIndex = ($currentPage - 1) * $itemsPerPage;
+	$endIndex = min($startIndex + $itemsPerPage - 1, $totalItems - 1);
+
+	// Lấy mảng khách hàng cho trang hiện tại
+	$pagedDanhmuc = array_slice($danhmuc, $startIndex, $itemsPerPage);
+
+?>
 
 <!-- <p><a class="btn btn-info" href="index.php?action=them">Thêm khách hàng</a></p> -->
 <h4 class="text-info">Danh sách khách hàng</h4>
