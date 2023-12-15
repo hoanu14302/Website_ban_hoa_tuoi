@@ -14,8 +14,8 @@
                         <img class="img-thumbnail" src="
                     <?php
                     if ($_SESSION['nguoidung']['hinhanh'] == NULL) {
-                        echo '../../images/users/user.png';
-                    } else echo '../../images/users/' . $_SESSION['nguoidung']['hinhanh']; ?>" alt="<?php echo $_SESSION['nguoidung']['hoten'];  ?>" width="100px">
+                        echo '../../img/users/user.png';
+                    } else echo '../../img/users/' . $_SESSION['nguoidung']['hinhanh']; ?>" alt="<?php echo $_SESSION['nguoidung']['hoten'];  ?>" width="100px">
                     </div>
                     <div class="my-3 mt-3">
                         <label for="email" class="form-label">Email:</label>
