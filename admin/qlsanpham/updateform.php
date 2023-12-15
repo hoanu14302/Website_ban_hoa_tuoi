@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 <div>
 <h3>Cập nhật mặt hàng</h3>
 <form method="post" action="index.php" enctype="multipart/form-data">
@@ -64,4 +64,4 @@
         } );
 </script>
 
-<?php include("../inc/bottom.php"); ?>
+<?php include("../include/bottom.php"); ?>
