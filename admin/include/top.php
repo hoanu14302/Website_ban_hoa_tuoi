@@ -45,7 +45,7 @@
 						</li>
 					<?php } ?>
 					<li class="sidebar-header text-info">
-						PHÂN LOẠI
+						DANH MỤC
 					</li>
 
 					<li class="sidebar-item  
