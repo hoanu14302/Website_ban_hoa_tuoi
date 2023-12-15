@@ -1,4 +1,24 @@
-<?php include("../include/top.php"); ?>
+<?php
+include("../include/top.php");
+
+	// Số danh mục trên mỗi trang
+	$itemsPerPage = 10;
+
+	// Tính toán số trang dựa trên tổng số danh mục và số danh mục trên mỗi trang
+	$totalItems = count($danhmuc);
+	$totalPages = ceil($totalItems / $itemsPerPage);
+
+	// Xác định trang hiện tại từ tham số 'page' trong URL
+	$currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+
+	// Xác định chỉ mục bắt đầu và kết thúc của danh mục trên trang hiện tại
+	$startIndex = ($currentPage - 1) * $itemsPerPage;
+	$endIndex = min($startIndex + $itemsPerPage - 1, $totalItems - 1);
+
+	// Lấy mảng danh mục cho trang hiện tại
+	$pagedMathang = array_slice($mathang, $startIndex, $itemsPerPage);
+
+?>
 
 <h4 class="text-info">Danh sách danh mục</h4> 
 <table class="table table-hover">
