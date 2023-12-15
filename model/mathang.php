@@ -133,7 +133,7 @@ class MATHANG
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM mathang where s.tenmh like '%$search%'  ";
+            $sql = "SELECT * FROM mathang where tenmh like '%$search%'  ";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
