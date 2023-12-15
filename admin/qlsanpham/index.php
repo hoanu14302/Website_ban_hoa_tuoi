@@ -30,7 +30,7 @@ switch($action){
 		move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
 		// xử lý thêm		
         $mathanghh = new MATHANG();
-		$mathanghh->settenmathang($_POST["txttenmathang"]);
+		$mathanghh->settenmh($_POST["txttenmathang"]);
 		$mathanghh->setmota($_POST["txtmota"]);
 		$mathanghh->setgiagoc($_POST["txtgianhap"]);
 		$mathanghh->setgiaban($_POST["txtgiaban"]);
@@ -75,7 +75,7 @@ switch($action){
         $mathanghh = new MATHANG();
         $mathanghh->setid($_POST["txtid"]);
         $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
-        $mathanghh->settenmathang($_POST["txttenhang"]);
+        $mathanghh->settenmh($_POST["txttenhang"]);
         $mathanghh->setmota($_POST["txtmota"]);
         $mathanghh->setgiagoc($_POST["txtgiagoc"]);
         $mathanghh->setgiaban($_POST["txtgiaban"]);

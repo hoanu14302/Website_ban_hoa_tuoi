@@ -1,8 +1,8 @@
 <?php include("../include/top.php"); ?>
 
 <a href="index.php">Trở về danh sách</a>
-<h3><?php echo $m["tenmathang"]; ?></h3> 
-<img src="../../<?php echo $m["hinhanh"]; ?>" width="400" class="img-thumbnail"></a>
+<h3><?php echo $m["tenmh"]; ?></h3> 
+<img src="../../img/giohang/<?php echo $m["hinhanh"]; ?>" width="400" class="img-thumbnail"></a>
 <p><strong>Mô tả: </strong><br><?php echo $m["mota"]; ?></p>
 <p><strong>Giá gốc: </strong><?php echo number_format($m["giagoc"]); ?>đ</p>
 <p><strong>Giá bán: </strong><?php echo number_format($m["giaban"]); ?>đ</p>

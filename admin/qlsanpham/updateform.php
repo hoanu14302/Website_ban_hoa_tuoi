@@ -43,7 +43,7 @@
 <div class="my-3">
 	<label>Hình ảnh</label><br>
 	<input type="hidden" name="txthinhcu" value="<?php echo $m["hinhanh"]; ?>">
-	<img src="../../<?php echo $m["hinhanh"]; ?>" width="50" class="img-thumbnail">	
+	<img src="../../img/giohang/<?php echo $m["hinhanh"]; ?>" width="50" class="img-thumbnail">	
 	<a data-bs-toggle="collapse" data-bs-target="#demo">Đổi hình ảnh</a>
 	<div id="demo" class="collapse m-3">
 	  <input type="file" class="form-control" name="filehinhanh">
