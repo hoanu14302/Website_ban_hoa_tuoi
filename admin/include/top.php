@@ -57,7 +57,7 @@
 					</li>
 
 					<li class="sidebar-item <?php if (strpos($_SERVER["REQUEST_URI"], "qlsanpham") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../qlsanpham/index.php">
+						<a class="sidebar-link" href="../qlmathang/index.php">
 							<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý mặt hàng</span>
 						</a>
 					</li>
