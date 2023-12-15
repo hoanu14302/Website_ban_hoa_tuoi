@@ -64,7 +64,7 @@ foreach ($danhmuc as $dm) {
         echo "<p>Danh mục hiện chưa có sản phẩm.</p>";
     else
     ?>
-    <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder" href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem thêm <?php echo $dm["tendm"]; ?></a></div>
+    <div class="text-end mb-2"><a class="text-warning text-decoration-none fw-bolder" href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem thêm <?php echo $dm["tendm"]; ?> >></a></div>
 <?php
 }
 ?>
