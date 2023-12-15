@@ -54,7 +54,7 @@ include("../include/top.php");
 	?>
 </table>
 
-<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo">Thêm mới danh mục</a><h4>
+<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo"><< Thêm mới danh mục >></a><h4>
 
 <div id="demo" class="collapse">
 	 
@@ -62,7 +62,7 @@ include("../include/top.php");
 		<input type="hidden" name="action" value="them">
 	<div class="row">	
 		<div class="col">
-			<input type="text" class="form-control" name="ten" placeholder="Nhập tên danh mục">
+			<input type="text" class="form-control" name="ten" placeholder="Nhập tên danh mục"> <br>
 		</div>
 		<div class="col">
 			<input type="submit" class="btn btn-info" value="Lưu">
@@ -72,7 +72,7 @@ include("../include/top.php");
 	</form>
 </div>
 
-<div class="pagination">
+<div class="pagination"> Trang 
 	<?php for ($i = 1; $i <= $totalPages; $i++): ?>
 		<?php if ($i == $currentPage): ?>
 			<span class="current-page"><?php echo $i; ?></span>

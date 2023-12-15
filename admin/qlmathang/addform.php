@@ -5,12 +5,12 @@
 <form method="post" enctype="multipart/form-data" action="index.php">
 <input type="hidden" name="action" value="xulythem">
 <div class="mb-3 mt-3">
-	<label for="optdanhmuc" class="form-label">Nơi sản xuất</label>
+	<label for="optdanhmuc" class="form-label">Loại hoa</label>
 	<select class="form-select" name="optdanhmuc">
 	<?php
 	foreach($danhmuc as $d):
 	?>
-		<option value="<?php echo $d["id"]; ?>"><?php echo $d["tendanhmuc"]; ?></option>
+		<option value="<?php echo $d["id"]; ?>"><?php echo $d["tendm"]; ?></option>
 	<?php
 	endforeach;
 	?>

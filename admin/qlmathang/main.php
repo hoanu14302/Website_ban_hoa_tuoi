@@ -2,7 +2,7 @@
 include("../include/top.php");
 
 // Số mặt hàng trên mỗi trang
-$itemsPerPage = 10;
+$itemsPerPage = 5;
 
 // Tính toán số trang dựa trên tổng số mặt hàng và số mặt hàng trên mỗi trang
 $totalItems = count($mathang);

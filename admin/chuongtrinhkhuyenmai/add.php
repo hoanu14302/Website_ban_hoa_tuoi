@@ -8,8 +8,8 @@
         <input class="form-control" type="text" name="txttenkm" placeholder="Nhập tên khuyến mãi">
     </div>
     <div class="md-3 mt-3">
-        <label for="txtmota" class="form-label">Mô tả</label>
-        <textarea name="txtmota" id="" cols="50" rows="5"></textarea>
+        <label for="txtmota" class="form-label">Mô tả</label><br>
+        <textarea name="txtmota" id="" cols="100" rows="5"></textarea>
     </div>
     <div class="mb-3 mt-3">
         <label for="txtphantram" class="form-label">Phần trăm giảm</label>
