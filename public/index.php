@@ -18,6 +18,7 @@ $nguoidung = $nd->laydanhsachnguoidung();
 $dh = new DONHANG();
 $dhct = new DONHANGCT();
 
+
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 } else {
