@@ -10,21 +10,25 @@
                     <input type="hidden" name="txtid" value="<?php echo $_SESSION['nguoidung']['id']; ?>">
                     <input type="hidden" name="txthinhanh" value="<?php echo $_SESSION['nguoidung']['hinhanh']; ?>">
                     <input type="hidden" name="action" value="xlhoso">
-                    <div class="text-center">
-                        <img class="img-thumbnail" src="
-                    <?php
-                    if ($_SESSION['nguoidung']['hinhanh'] == NULL) {
-                        echo '../img/users/user.png';
-                    } else echo '../img/users/' . $_SESSION['nguoidung']['hinhanh']; ?>" alt="<?php echo $_SESSION['nguoidung']['hoten'];  ?>" width="100px">
-                    </div>
-                    <div class="my-3 mt-3">
+                    <div class="row">
+                        <div class="col-7">
+                        <div class="my-3 mt-3">
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="txtemail" value="<?php echo $_SESSION['nguoidung']['email']; ?>" required>
                     </div>
                     <div class="my-3">
                         <label for="txtsdt" class="form-label">Số điện thoại:</label>
                         <input type="number" class="form-control" id="sdt" placeholder="Số điện thoại" name="txtsdt" value="<?php echo $_SESSION['nguoidung']['sodienthoai']; ?>" required>
-                    </div>
+                    </div></div>
+                        <div class="col-5">
+                        <div class="text-center">
+                            <img class="img-thumbnail" width="300px" height="300px" src="
+                        <?php
+                        if ($_SESSION['nguoidung']['hinhanh'] == NULL) {
+                            echo '../img/users/user.png';
+                        } else echo '../img/users/' . $_SESSION['nguoidung']['hinhanh']; ?>" alt="<?php echo $_SESSION['nguoidung']['hoten'];  ?>" width="100px">
+                        </div></div>
+                    </div>                   
                     <div class="my-3">
                         <label for="txtdiachi" class="form-label">Địa chỉ:</label>
                         <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" name="txtdiachi" value="<?php echo $_SESSION['nguoidung']['diachi']; ?>" required>
