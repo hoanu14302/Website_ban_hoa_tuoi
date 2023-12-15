@@ -72,5 +72,15 @@ include("../include/top.php");
 	</form>
 </div>
 
+<div class="pagination">
+	<?php for ($i = 1; $i <= $totalPages; $i++): ?>
+		<?php if ($i == $currentPage): ?>
+			<span class="current-page"><?php echo $i; ?></span>
+		<?php else: ?>
+			<a href="index.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+		<?php endif; ?>
+	<?php endfor; ?>
+</div>
+
 
 <?php include("../include/bottom.php"); ?>
