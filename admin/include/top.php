@@ -167,7 +167,7 @@
 							<!-- Bổ sung một số thông tin vào menu người dùng -->
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="../../images/users/<?php echo $_SESSION["nguoidung"]["hinhanh"]; ?>" class="avatar img-fluid rounded me-1" alt="<?php echo $_SESSION["nguoidung"]["hinhanh"]; ?>" />
+								<img src="../../img/users/<?php echo $_SESSION["nguoidung"]["hinhanh"]; ?>" class="avatar img-fluid rounded me-1" alt="<?php echo $_SESSION["nguoidung"]["hinhanh"]; ?>" />
 								<span class="text-dark">
 									Chào
 									<?php
