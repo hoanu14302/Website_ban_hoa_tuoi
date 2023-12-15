@@ -3,7 +3,7 @@ if (!isset($_SESSION["nguoidung"]))
     header("location:../index.php");
 
 require("../../model/database.php");
-require("../../model/khuyenmai.php");
+require("../../model/chuongtrinhkhuyenmai.php");
 
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
