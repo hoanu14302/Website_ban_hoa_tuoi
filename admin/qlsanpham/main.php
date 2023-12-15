@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <h3>Quản lý hoa tươi</h3> 
 <br>
