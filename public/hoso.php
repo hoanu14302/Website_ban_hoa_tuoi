@@ -13,8 +13,8 @@
                     <div class="row">
                         <div class="col-7">
                         <div class="my-3 mt-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="txtemail" value="<?php echo $_SESSION['nguoidung']['email']; ?>" required>
+                        <label for="txthoten" class="form-label">Họ tên:</label>
+                        <input type="text" class="form-control" id="hoten" placeholder="Họ tên" name="txthoten" value="<?php echo $_SESSION['nguoidung']['hoten']; ?>" required>
                     </div>
                     <div class="my-3">
                         <label for="txtsdt" class="form-label">Số điện thoại:</label>
@@ -34,8 +34,9 @@
                         <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ" name="txtdiachi" value="<?php echo $_SESSION['nguoidung']['diachi']; ?>" required>
                     </div>
                     <div class="my-3">
-                        <label for="txthoten" class="form-label">Họ tên:</label>
-                        <input type="text" class="form-control" id="hoten" placeholder="Họ tên" name="txthoten" value="<?php echo $_SESSION['nguoidung']['hoten']; ?>" required>
+                    <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="txtemail" value="<?php echo $_SESSION['nguoidung']['email']; ?>" required>
+                        
                     </div>
                     <div class="my-3">
                         <label for="fhinhanh" class="form-label">Đổi hình đại diện</label>
