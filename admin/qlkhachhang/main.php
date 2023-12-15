@@ -16,7 +16,7 @@ include("../include/top.php");
 	$endIndex = min($startIndex + $itemsPerPage - 1, $totalItems - 1);
 
 	// Lấy mảng khách hàng cho trang hiện tại
-	$pagedDanhmuc = array_slice($danhmuc, $startIndex, $itemsPerPage);
+	$pagedNguoidung = array_slice($nguoidung, $startIndex, $itemsPerPage);
 
 ?>
 
@@ -34,7 +34,7 @@ include("../include/top.php");
         <th>Khóa</th>
     </tr>
     <?php
-    foreach ($nguoidung as $n) :
+    foreach ($pagedNguoidung as $n) :
         foreach ($quyen as $q) :
             if ($n["loai"] == "3" && $q["id"] == "3") {
     ?>
@@ -67,4 +67,13 @@ include("../include/top.php");
     endforeach;
     ?>
 </table>
+<div class="pagination">
+	<?php for ($i = 1; $i <= $totalPages; $i++): ?>
+		<?php if ($i == $currentPage): ?>
+			<span class="current-page"><?php echo $i; ?></span>
+		<?php else: ?>
+			<a href="index.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+		<?php endif; ?>
+	<?php endfor; ?>
+</div>
 <?php include("../include/bottom.php"); ?>
