@@ -24,7 +24,7 @@
 	?>
 		<tr>
 			<td><?php echo $d["id"]; ?></td>
-			<td><?php echo $d["tendanhmuc"]; ?></td>
+			<td><?php echo $d["tendm"]; ?></td>
 			<td><a href="index.php?action=sua&id=<?php echo $d["id"]; ?>" class="btn btn-warning">Sửa</a></td>
 			<td><a href="index.php?action=xoa&id=<?php echo $d["id"]; ?>" class="btn btn-danger">Xóa</a></td>
 		</tr>
