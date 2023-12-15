@@ -10,7 +10,7 @@
 
 	<title>Trang quản trị - Elko Garden</title>
 
-	<link href="../inc/css/app.css" rel="stylesheet">
+	<link href="../include/css/app.css" rel="stylesheet">
 	<script src="../inc/js/app.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
