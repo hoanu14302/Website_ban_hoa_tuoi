@@ -39,4 +39,4 @@
 	?>
 </table>
 
-<?php include("../inc/bottom.php"); ?>
+<?php include("../include/bottom.php"); ?>
