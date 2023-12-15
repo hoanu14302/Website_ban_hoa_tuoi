@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <a href="index.php">Trở về danh sách</a>
 <h3><?php echo $m["tenmathang"]; ?></h3> 
