@@ -52,7 +52,7 @@
 					<?php if (strpos($_SERVER["REQUEST_URI"], "qlphanloai") != false) echo "active"; ?>
 					">
 						<a class="sidebar-link" href="../qlphanloai/index.php">
-							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý phân loại</span>
+							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
 						</a>
 					</li>
 
