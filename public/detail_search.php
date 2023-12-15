@@ -4,7 +4,7 @@
   <div class="col-sm-9">
     <h3 class="text-dark"><?php echo $mhct["tenmh"]; ?></h3>
 
-    <div><img width="500px" src="../img/hoa/<?php echo $dm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
+    <div><img width="500px" src="../img/giohang/<?php echo $mhct["hinhanh"]; ?>"></div>
 
     <div>
       <h4 class="text-primary">Giá bán:
@@ -35,55 +35,62 @@
     <h3 class="text-warning">CÙNG DANH MỤC:</h3>
     <?php
     $count = 0; // Biến đếm số lượng
-    foreach ($mathang as $m) :
-      if ($m["id"] != $mhct["id"] and $count >= 2)
-        break;
+    foreach ($mathang as $m) : {
+        foreach ($danhmuc as $dm) :
+          if ($m["danhmuc_id"] == $dm["id"]) {
+            if ($m["id"] != $mhct["id"] and $count >= 2)
+              break;
     ?>
-      <div>
-        <div class="col mb-5">
-          <div class="card h-100 shadow">
-            <!-- Expired product-->
-          <?php if ($m["soluongton"] == 0) { ?>
-                            <div class="badge bg-danger text-white position-absolute" style="text-align: center; width: 150px; align-items: center;">Hết hàng</div>
-                        <?php } // end if 
-                        ?>  
-            <!-- Sale badge-->
-            <?php if ($m["giaban"] < $m["giagoc"]) { ?>
-              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
-            <?php } // end if 
-            ?>
-            <!-- Product image-->
-            <a href="?action=detail&danhmuc=<?php echo $dm ?>&id=<?php echo $m["id"]; ?>">
-              <img class="card-img-top" src="../img/hoa/<?php echo $dm ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
-            </a>
-            <!-- Product details-->
-            <div class="card-body p-4">
-              <div class="text-center">
-                <!-- Product name-->
-                <a class="text-decoration-none" href="?action=detail&danhmuc=<?php echo $dm ?>&id=<?php echo $m["id"]; ?>">
-                  <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
-                </a>
-                <!-- Product reviews-->
+            <div>
+              <div class="col mb-5">
+                <div class="card h-100 shadow">
+                  <!-- Expired product-->
+                  <?php if ($m["soluongton"] == 0) { ?>
+                    <div class="badge bg-danger text-white position-absolute" style="text-align: center; width: 150px; align-items: center;">Hết hàng</div>
+                  <?php } // end if 
+                  ?>
+                  <!-- Sale badge-->
+                  <?php if ($m["giaban"] < $m["giagoc"]) { ?>
+                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
+                  <?php } // end if 
+                  ?>
+                  <!-- Product image-->
+                  <a href="?action=detail_search&id=<?php echo $m["id"]; ?>">
+                    <img class="card-img-top" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
+                  </a>
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                    <div class="text-center">
+                      <!-- Product name-->
+                      <a class="text-decoration-none" href="?action=detail_search&id=<?php echo $m["id"]; ?>">
+                        <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
+                      </a>
+                      <!-- Product reviews-->
 
-                <!-- Product price-->
-                <?php if ($m["giaban"] < $m["giagoc"]) { ?>
-                  <span class="text-muted text-decoration-line-through"><?php echo number_format($m["giagoc"]); ?>đ</span><?php } // end if 
-                                                                                                                          ?>
-                <span class="text-danger fw-bolder"><?php echo number_format($m["giaban"]); ?>đ</span>
+                      <!-- Product price-->
+                      <?php if ($m["giaban"] < $m["giagoc"]) { ?>
+                        <span class="text-muted text-decoration-line-through"><?php echo number_format($m["giagoc"]); ?>đ</span><?php } // end if 
+                                                                                                                                ?>
+                      <span class="text-danger fw-bolder"><?php echo number_format($m["giaban"]); ?>đ</span>
+                    </div>
+                  </div>
+                  <!-- Product actions-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-info mt-auto" href="#">Chọn mua</a></div>
+                  </div>
+                </div>
+
               </div>
             </div>
-            <!-- Product actions-->
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <div class="text-center"><a class="btn btn-outline-info mt-auto" href="#">Chọn mua</a></div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-      
     <?php
-      // endforeach;
-      $count++; // Tăng biến đếm lên sau khi hiển thị một mặt hàng
+
+          } // endforeach;
+          $count++; // Tăng biến đếm lên sau khi hiển thị một mặt hàng
+
+
+        endforeach;
+      } // endforeach;
 
     endforeach;
 
@@ -92,7 +99,8 @@
   </div>
 </div>
 
-<h6><div class="text-end mb-2"><a class=" text-decoration-none fw-bolder" style="color:#349abb;"
-          href="index.php?action=group&id=<?php echo $madm ?>">Xem tất cả<?php echo $dm ?></a></div></h6>
+<h6>
+  <div class="text-end mb-2"><a class=" text-decoration-none fw-bolder" style="color:#349abb;" href="index.php?action=group&id=<?php echo $m["danhmuc_id"]; ?>">Xem tất cả</a></div>
+</h6>
 
 <?php include("include/bottom.php"); ?>

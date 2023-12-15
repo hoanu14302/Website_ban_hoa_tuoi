@@ -56,6 +56,19 @@ switch ($action) {
             include("detail.php");
         }
         break;
+    case "detail_search":
+        if (isset($_GET["id"])) {
+            $id_mh = $_GET["id"];
+            // tăng lượt xem lên 1
+            $mh->tangluotxem($id_mh);
+            // lấy thông tin chi tiết mặt hàng
+            $mhct = $mh->laymathangtheoid($id_mh);
+            // lấy các mặt hàng cùng danh mục
+            $madm = $mhct["danhmuc_id"];
+            $mathang = $mh->laymathangtheodanhmuc($madm);
+            include("detail_search.php");
+        }
+        break;
     case "chovaogio":
 
         if (isset($_REQUEST["id"]))

@@ -18,14 +18,14 @@
                         <?php } // end if 
                         ?>
                         <!-- Product image-->
-                        <a href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
+                        <a href="index.php?action=detail_search&id=<?php echo $m["id"]; ?>">
                             <img class="card-img-top" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;" />
                         </a>
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <a class="text-decoration-none" href="index.php?action=detail&id=<?php echo $m["id"]; ?>">
+                                <a class="text-decoration-none" href="index.php?action=detail_search&id=<?php echo $m["id"]; ?>">
                                     <h5 class="fw-bolder text-info"><?php echo $m["tenmh"]; ?></h5>
                                 </a>
                                 <!-- Product price-->
