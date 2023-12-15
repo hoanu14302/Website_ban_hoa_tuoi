@@ -1,4 +1,4 @@
-<?php include("../inc/top.php"); ?>
+<?php include("../include/top.php"); ?>
 
 <p><a class="btn btn-info" href="index.php?action=them">Thêm khuyến mãi</a></p>
 <h4 class="text-info">Danh sách khuyến mãi</h4>
@@ -22,4 +22,4 @@
     endforeach;
     ?>
 </table>
-<?php include("../inc/bottom.php"); ?>
+<?php include("../include/bottom.php"); ?>
