@@ -46,9 +46,9 @@ switch ($action) {
         $mathanghh->setsoluongton($_POST["txtsoluong"]);
         $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
         $mathanghh->sethinhanh($hinhanh);
-        $mh->themmathang($mathanghh);
+        $mh->themmathang($mathanghh);}
         $mathang = $mh->laymathang();
-        include("main.php");}
+        include("main.php");
         break;
     case "xoa":
         if (isset($_GET["id"])) {
@@ -80,6 +80,9 @@ switch ($action) {
         }
         break;
     case "xulysua":
+        if (empty($_POST["txttenmathang"]) || empty($_POST["txtmota"]) || $_POST["txtgianhap"] == "0" || $_POST["txtgiaban"] == "0" || $_POST["txtsoluong"] == "0" || empty($_POST["optdanhmuc"])) {
+            echo "Vui lòng nhập đầy đủ thông tin.";
+        }else {
         $mathanghh = new MATHANG();
         $mathanghh->setid($_POST["txtid"]);
         $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
@@ -107,7 +110,7 @@ switch ($action) {
         }
 
         // sửa mặt hàng
-        $mh->suamathang($mathanghh);
+        $mh->suamathang($mathanghh);}
 
         // hiển thị ds mặt hàng
         $mathang = $mh->laymathang();
