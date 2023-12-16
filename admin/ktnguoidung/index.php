@@ -107,12 +107,12 @@ switch ($action) {
             }
 
             // Kiểm tra nếu trường giá bán rỗng hoặc không phải số
-            if (empty($_POST["txtgiaban"]) || !is_numeric($_POST["txtgiaban"])) {
+            if ($_POST["txtgiaban"] == 0) {
                 $errors[] = "Vui lòng nhập giá bán hợp lệ.";
             }
 
             // Kiểm tra nếu trường số lượng tồn rỗng hoặc không phải số
-            if (empty($_POST["txtsoluongton"]) || !is_numeric($_POST["txtsoluongton"])) {
+            if ($_POST["txtsoluongton"]==0) {
                 $errors[] = "Vui lòng nhập số lượng tồn hợp lệ.";
             }
             // Nếu không có lỗi, tiến hành xử lý và cập nhật dữ liệu
