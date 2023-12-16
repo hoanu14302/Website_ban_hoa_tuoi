@@ -94,7 +94,6 @@ switch ($action) {
         // Kiểm tra và xử lý dữ liệu khi người dùng gửi form
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Kiểm tra và xử lý dữ liệu ở đây
-
             // Kiểm tra nếu trường tên mặt hàng rỗng
             if (empty($_POST["txttenmh"])) {
                 $errors[] = "Vui lòng nhập tên mặt hàng.";
