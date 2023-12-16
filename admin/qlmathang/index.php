@@ -16,13 +16,10 @@ $mh = new MATHANG();
 switch ($action) {
     case "xem":
         $mathang = $mh->laymathang();
-        
         include("main.php");
         break;
     case "them":
         $danhmuc = $dm->laydanhmuc();
-        
-
         include("addform.php");
         break;
     case "xulythem":
