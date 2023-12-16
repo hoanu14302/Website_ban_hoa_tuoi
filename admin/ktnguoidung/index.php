@@ -34,7 +34,7 @@ switch ($action) {
             if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"] !== null && isset($_SESSION["nguoidung"]["loai"])) {
                 $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
 
-                if ($_SESSION["nguoidung"]["loai"] == 1 || $_SESSION["nguoidung"]["loai"] == 2) {
+                if ($_SESSION["nguoidung"]["loai"] == "1" || $_SESSION["nguoidung"]["loai"] == "2") {
 
                     $mathanghh = $mh->laymathanghethang();
                     include("main.php");
