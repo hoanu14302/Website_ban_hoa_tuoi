@@ -74,6 +74,12 @@ switch ($action) {
                 $mathanghh->sethinhanh($hinhanh);
                 $mh->themmathang($mathanghh);
             }
+            else {
+                // Hiển thị thông báo lỗi
+                foreach ($errors as $error) {
+                    echo $error . "<br>";
+                }
+            }
             $mathang = $mh->laymathang();
             include("main.php");
             break;
