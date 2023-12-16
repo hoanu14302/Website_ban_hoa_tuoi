@@ -34,7 +34,7 @@ switch ($action) {
         $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
         // Kiểm tra dữ liệu nhập liệu
-        if (empty($txttenmathang) || empty($txtmota) || empty($txtgianhap) || empty($txtgiaban) || empty($txtsoluong) || empty($optdanhmuc)) {
+        if (empty($txttenmathang) || empty($txtmota) || $txtgianhap == 0 || $txtgiaban == 0 || $txtsoluong  == 0 || empty($optdanhmuc)) {
             echo "Vui lòng nhập đầy đủ thông tin.";
         }else {
         // xử lý thêm		
