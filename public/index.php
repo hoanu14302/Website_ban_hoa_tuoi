@@ -178,31 +178,73 @@ switch ($action) {
         }
         break;
     case "htdonhang":
-        //thêm đơn hàng
+        // //thêm đơn hàng chi tiết
+        // $dhctmoi = new DONHANGCT();
+        // $dhctmoi->setdonhang_id($dh->getid());
+        // $dhctmoi->setmathang_id($_POST["txtid_mh"]);
+        // $dhctmoi->setdongia($_POST["txtdongia"]);
+        // $dhctmoi->setsoluong($_POST["txtsl"]);
+        // $dhctmoi->setthanhtien($_POST["txtthanhtien"]);
+        // $dhct->themdonhangct($dhctmoi);
+
+        // // Giảm số lượng sản phẩm
+        // $mathang = $mh->giamsoluong($_POST["txtid_mh"], $_POST["txtsl"]);
+        // xoagiohang();
+
+        // $mathang = $mh->laymathang();
+        // include("main.php");
+
+        $ghichu = isset($_POST["txtghichu"]) ? $_POST["txtghichu"] : "";
+        $id_mh = isset($_POST["txtid_mh"]) ? $_POST["txtid_mh"] : [];
+        // Thêm đơn hàng
         $donhangmoi = new DONHANG();
         $ngay = date("Y-m-d");
-        $ghichu = "";
         $donhangmoi->setnguoidung_id($_POST["txtid"]);
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
-        $donhangmoi->setghichu($ghichu);
-        // thêm
+        $donhangmoi->setghichu($_POST["txtghichu"]);
+        // Thêm
         $dh->themdonhang($donhangmoi);
 
-        // Giảm số lượng sản phẩm
-    $mathang = $mh->giamsoluong($_POST["txtid_mh"], $_POST["txtsl"]);
-    
-        //thêm đơn hàng chi tiết
-        //$dhctmoi = new DONHANGCT();
-        // $dhctmoi->setdonhang_id($_POST["txtid"]);
-        // $dhctmoi->setmathang_id($ngay);
-        // $dhctmoi->setthanhtien($_POST["txttongtien"]);
-        // $dhctmoi->setghichu($ghichu);
-        // $dhct->themdonhangct($dhctmoi);
+        // Thêm đơn hàng chi tiết và giảm số lượng sản phẩm
+        // $so_luong_mh = count($_POST["txtid_mh"]);
+        // for ($i = 0; $i < $so_luong_mh; $i++) {
+        //     $dhctmoi = new DONHANGCT();
+        //     $dhctmoi->setdonhang_id($dh->getid());
+        //     $dhctmoi->setmathang_id($id_mh[$i]);
+        //     $dhctmoi->setdongia($_POST["txtdongia"][$i]);
+        //     $dhctmoi->setsoluong($_POST["txtsl"][$i]);
+        //     $dhctmoi->setthanhtien($_POST["txtthanhtien"][$i]);
+        //     $dhct->themdonhangct($dhctmoi);
+
+        //     // Giảm số lượng sản phẩm
+        //     giam_soluong_sanpham($id_mh[$i], $_POST["txtsl"][$i]);
+        // }
+
         xoagiohang();
 
         $mathang = $mh->laymathang();
         include("main.php");
+
+
+        // function giam_soluong_sanpham($id_mh, $soluong)
+        // {
+        //     session_start();
+
+        //     if (isset($_SESSION['giohang'])) {
+        //         foreach ($_SESSION['giohang'] as $id => $mh) {
+        //             if ($mh['id'] === $id_mh) {
+        //                 $_SESSION['giohang'][$id]['soluong'] -= $soluong;
+
+        //                 if ($_SESSION['giohang'][$id]['soluong'] === 0) {
+        //                     unset($_SESSION['giohang'][$id]);
+        //                 }
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+
         break;
     case "search":
         if (isset($_POST["timkiem"])) {

@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-7">
 				<div class="my-3">
-					<label>Hãng sản xuất</label>
+					<label>Loại hoa</label>
 					<select class="form-control" name="optdanhmuc">
 						<?php foreach ($danhmuc as $dm) { ?>
 							<option value="<?php echo $dm["id"]; ?>" <?php if ($dm["id"] == $m["danhmuc_id"]) echo "selected"; ?>><?php echo $dm["tendm"]; ?></option>
@@ -15,7 +15,7 @@
 					</select>
 				</div>
 				<div class="my-3">
-					<label>Tên hàng</label>
+					<label>Tên hoa</label>
 					<input class="form-control" type="text" name="txttenhang" required value="<?php echo $m["tenmh"]; ?>">
 				</div>
 			</div>
@@ -67,11 +67,11 @@
 			<label>Lượt mua</label>
 			<input class="form-control" type="number" name="txtluotmua" value="<?php echo $m["luotmua"]; ?>" required>
 		</div>
-
+	
 		<div class="my-3">
-            <input class="btn btn-primary" type="submit" value="Lưu">
-            <input class="btn btn-warning" type="reset" value="Hủy">
-        </div>
+			<input class="btn btn-primary" type="submit" value="Lưu">
+			<input class="btn btn-warning" type="reset" value="Hủy">
+		</div>
 
 
 	</form>

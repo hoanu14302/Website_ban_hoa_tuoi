@@ -16,10 +16,13 @@ $mh = new MATHANG();
 switch ($action) {
     case "xem":
         $mathang = $mh->laymathang();
+        
         include("main.php");
         break;
     case "them":
         $danhmuc = $dm->laydanhmuc();
+        
+
         include("addform.php");
         break;
     case "xulythem":
@@ -28,7 +31,7 @@ switch ($action) {
         $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
-        
+
         // Dẫn nơi lưu theo giỏ hàng
         $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
@@ -67,10 +70,11 @@ switch ($action) {
         break;
     case "sua":
         if (isset($_GET["id"])) {
-            $m = $mh->laymathangtheoid($_GET["id"]);
+            $m = $mh->laymathangtheoid($_GET["id"]); 
             $danhmuc = $dm->laydanhmuc();
             include("updateform.php");
         } else {
+            
             $mathang = $mh->laymathang();
             include("main.php");
         }
@@ -91,10 +95,15 @@ switch ($action) {
         // upload file mới (nếu có)
         if ($_FILES["filehinhanh"]["name"] != "") {
             // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
-            $hinhanh = "img/users/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn lưu csdl
-            $mathanghh->sethinhanh($hinhanh);
-            $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
-            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
+            // Dẫn nơi lưu theo danh mục
+            $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
+            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
+
+            // Dẫn nơi lưu theo giỏ hàng
+            $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
+            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
         }
 
         // sửa mặt hàng

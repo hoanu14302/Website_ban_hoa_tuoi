@@ -11,16 +11,16 @@
             <th>Xóa</th>
         </tr>
         <?php
-        foreach ($mathanghh as $mhhhhhh) :
+        foreach ($mathanghh as $m) :
         ?>
             <tr>
-                <td><?php echo $mhhh["tenmh"]; ?>
+                <td><?php echo $m["tenmh"]; ?>
                 </td>
-                <td><?php echo number_format($mhhh["giaban"]); ?></td>
-                <td><?php echo $mhhh["soluongton"]; ?></td>
-                <td><img width="150px" class="thumnail" src="../../img/giohang/<?php echo $mhhh['hinhanh']; ?>  "></td>
-                <td><a href="index.php?action=sua&id=<?php echo $mhhh['id']; ?>" class="btn btn-warning">Sửa</a></td>
-                <td><a href="index.php?action=xoa&id=<?php echo  $mhhh['id']; ?>" class="btn btn-danger">Xóa</a></td>
+                <td><?php echo number_format($m["giaban"]); ?></td>
+                <td><?php echo $m["soluongton"]; ?></td>
+                <td><img width="150px" class="thumnail" src="../../img/giohang/<?php echo $m['hinhanh']; ?>  "></td>
+                <td><a href="index.php?action=sua&id=<?php echo $m['id']; ?>" class="btn btn-warning">Sửa</a></td>
+                <td><a href="index.php?action=xoa&id=<?php echo  $m['id']; ?>" class="btn btn-danger">Xóa</a></td>
             </tr>
         <?php
         endforeach;

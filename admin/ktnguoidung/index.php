@@ -100,9 +100,9 @@ switch ($action) {
         break;
     case "sua":
         if (isset($_GET["id"])) {
-            $s = $mh->laymathangtheoid($_GET["id"]);
-            $danhmuc = $pl->laydanhmuc();
-            include("update.php");
+            $m = $mh->laymathangtheoid($_GET["id"]);
+            $danhmuc = $dm->laydanhmuc();
+            include("../qlmathang/updateform.php");
         } else {
             $mathang = $mh->laymathang();
             include("main.php");

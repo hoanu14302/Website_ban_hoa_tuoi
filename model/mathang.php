@@ -12,8 +12,8 @@ class MATHANG
     private $hinhanh;
     private $luotxem;
     private $luotmua;
-    private $true_false_km;
-    private $khuyenmai_id;
+    // private $true_false_km;
+    // private $khuyenmai_id;
 
     public function getid()
     {
@@ -95,22 +95,22 @@ class MATHANG
     {
         $this->luotmua = $value;
     }
-    public function gettrue_false_km()
-    {
-        return $this->true_false_km;
-    }
-    public function settrue_false_km($value)
-    {
-        $this->true_false_km = $value;
-    }
-    public function getkhuyenmai_id()
-    {
-        return $this->khuyenmai_id;
-    }
-    public function setkhuyenmai_id($value)
-    {
-        $this->khuyenmai_id = $value;
-    }
+    // public function gettrue_false_km()
+    // {
+    //     return $this->true_false_km;
+    // }
+    // public function settrue_false_km($value)
+    // {
+    //     $this->true_false_km = $value;
+    // }
+    // public function getkhuyenmai_id()
+    // {
+    //     return $this->khuyenmai_id;
+    // }
+    // public function setkhuyenmai_id($value)
+    // {
+    //     $this->khuyenmai_id = $value;
+    // }
 
     // Lấy danh sách
     public function laymathang()
@@ -306,7 +306,7 @@ class MATHANG
         try {
             $sql = "INSERT INTO 
 mathang(tenmh,danhmuc_id,mota,giagoc,giaban,soluongton,hinhanh,luotxem,luotmua) 
-VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0,:true_false_km,:khuyenmai_id)";
+VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0)";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tenmh", $mathang->tenmh);
             $cmd->bindValue(":danhmuc_id", $mathang->danhmuc_id);
@@ -315,8 +315,8 @@ VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0,:true_f
             $cmd->bindValue(":giaban", $mathang->giaban);
             $cmd->bindValue(":soluongton", $mathang->soluongton);
             $cmd->bindValue(":hinhanh", $mathang->hinhanh);
-            $cmd->bindValue(":true_false_km", $mathang->true_false_km);
-            $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
+            // $cmd->bindValue(":true_false_km", $mathang->true_false_km);
+            // $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
 
             $result = $cmd->execute();
             return $result;
@@ -355,10 +355,9 @@ VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0,:true_f
             soluongton=:soluongton,
             hinhanh=:hinhanh,
             luotxem=:luotxem,
-            luotmua=:luotmua,
-            true_false_km=:true_false_km,
-            khuyenmai_id=:khuyenmai_id
-
+            luotmua=:luotmua
+            -- true_false_km=:true_false_km,
+            -- khuyenmai_id=:khuyenmai_id
             WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tenmh", $mathang->tenmh);
@@ -370,8 +369,8 @@ VALUES(:tenmh,:danhmuc_id,:mota,:giagoc,:giaban,:soluongton,:hinhanh,0,0,:true_f
             $cmd->bindValue(":hinhanh", $mathang->hinhanh);
             $cmd->bindValue(":luotxem", $mathang->luotxem);
             $cmd->bindValue(":luotmua", $mathang->luotmua);
-            $cmd->bindValue(":true_false_km", $mathang->true_false_km);
-            $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
+            // $cmd->bindValue(":true_false_km", $mathang->true_false_km);
+            // $cmd->bindValue(":khuyenmai_id", $mathang->khuyenmai_id);
 
             $cmd->bindValue(":id", $mathang->id);
             $result = $cmd->execute();
