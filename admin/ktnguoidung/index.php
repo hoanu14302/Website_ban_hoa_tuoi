@@ -86,7 +86,19 @@ switch ($action) {
             include("main.php");
         }
         break;
-    case "xulysua": // lưu dữ liệu sửa mới vào db
+        case "xulysua": // lưu dữ liệu sửa mới vào db
+
+            // Khởi tạo mảng lưu trữ các thông báo lỗi
+            $errors = [];
+        
+            // Kiểm tra và xử lý dữ liệu khi người dùng gửi form
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Kiểm tra và xử lý dữ liệu ở đây
+        
+                // Kiểm tra nếu trường tên mặt hàng rỗng
+                if (empty($_POST["txttenmh"])) {
+                    $errors[] = "Vui lòng nhập tên mặt hàng.";
+                }
 
         // gán dữ liệu từ form
         $mhsua = new mathang();
