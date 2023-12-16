@@ -99,6 +99,20 @@ switch ($action) {
                 if (empty($_POST["txttenmh"])) {
                     $errors[] = "Vui lòng nhập tên mặt hàng.";
                 }
+            // Kiểm tra nếu trường mô tả rỗng
+        if (empty($_POST["txtmota"])) {
+            $errors[] = "Vui lòng nhập mô tả mặt hàng.";
+        }
+
+        // Kiểm tra nếu trường giá bán rỗng hoặc không phải số
+        if (empty($_POST["txtgiaban"]) || !is_numeric($_POST["txtgiaban"])) {
+            $errors[] = "Vui lòng nhập giá bán hợp lệ.";
+        }
+
+        // Kiểm tra nếu trường số lượng tồn rỗng hoặc không phải số
+        if (empty($_POST["txtsoluongton"]) || !is_numeric($_POST["txtsoluongton"])) {
+            $errors[] = "Vui lòng nhập số lượng tồn hợp lệ.";
+        }    
 
         // gán dữ liệu từ form
         $mhsua = new mathang();
