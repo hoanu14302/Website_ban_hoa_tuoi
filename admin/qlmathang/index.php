@@ -33,20 +33,20 @@ switch ($action) {
         $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
-                // xử lý thêm		
-                $mathanghh = new MATHANG();
-                $mathanghh->settenmh($_POST["txttenmathang"]);
-                $mathanghh->setmota($_POST["txtmota"]);
-                $mathanghh->setgiagoc($_POST["txtgianhap"]);
-                $mathanghh->setgiaban($_POST["txtgiaban"]);
-                $mathanghh->setsoluongton($_POST["txtsoluong"]);
-                $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
-                $mathanghh->sethinhanh($hinhanh);
-                $mh->themmathang($mathanghh);
-            
-            $mathang = $mh->laymathang();
-            include("main.php");
-            break;
+        // xử lý thêm		
+        $mathanghh = new MATHANG();
+        $mathanghh->settenmh($_POST["txttenmathang"]);
+        $mathanghh->setmota($_POST["txtmota"]);
+        $mathanghh->setgiagoc($_POST["txtgianhap"]);
+        $mathanghh->setgiaban($_POST["txtgiaban"]);
+        $mathanghh->setsoluongton($_POST["txtsoluong"]);
+        $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
+        $mathanghh->sethinhanh($hinhanh);
+        $mh->themmathang($mathanghh);
+
+        $mathang = $mh->laymathang();
+        include("main.php");
+        break;
     case "xoa":
         if (isset($_GET["id"])) {
             $mathanghh = new MATHANG();
@@ -77,38 +77,35 @@ switch ($action) {
         }
         break;
     case "xulysua":
-        if (empty($_POST["txttenmathang"]) || empty($_POST["txtmota"]) || $_POST["txtgianhap"] == "0" || $_POST["txtgiaban"] == "0" || $_POST["txtsoluong"] == "0" || empty($_POST["optdanhmuc"])) {
-            echo "Vui lòng nhập đầy đủ thông tin.";
-        } else {
-            $mathanghh = new MATHANG();
-            $mathanghh->setid($_POST["txtid"]);
-            $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
-            $mathanghh->settenmh($_POST["txttenhang"]);
-            $mathanghh->setmota($_POST["txtmota"]);
-            $mathanghh->setgiagoc($_POST["txtgiagoc"]);
-            $mathanghh->setgiaban($_POST["txtgiaban"]);
-            $mathanghh->setsoluongton($_POST["txtsoluongton"]);
-            $mathanghh->setluotxem($_POST["txtluotxem"]);
-            $mathanghh->setluotmua($_POST["txtluotmua"]);
-            $mathanghh->sethinhanh($_POST["txthinhcu"]);
+        $mathanghh = new MATHANG();
+        $mathanghh->setid($_POST["txtid"]);
+        $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
+        $mathanghh->settenmh($_POST["txttenhang"]);
+        $mathanghh->setmota($_POST["txtmota"]);
+        $mathanghh->setgiagoc($_POST["txtgiagoc"]);
+        $mathanghh->setgiaban($_POST["txtgiaban"]);
+        $mathanghh->setsoluongton($_POST["txtsoluongton"]);
+        $mathanghh->setluotxem($_POST["txtluotxem"]);
+        $mathanghh->setluotmua($_POST["txtluotmua"]);
+        $mathanghh->sethinhanh($_POST["txthinhcu"]);
 
-            // upload file mới (nếu có)
-            if ($_FILES["filehinhanh"]["name"] != "") {
-                // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
-                // Dẫn nơi lưu theo danh mục
-                $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
-                $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
-                move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
+        // upload file mới (nếu có)
+        if ($_FILES["filehinhanh"]["name"] != "") {
+            // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
+            // Dẫn nơi lưu theo danh mục
+            $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
+            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
 
-                // Dẫn nơi lưu theo giỏ hàng
-                $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
-                $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
-                move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
-            }
-
-            // sửa mặt hàng
-            $mh->suamathang($mathanghh);
+            // Dẫn nơi lưu theo giỏ hàng
+            $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
+            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
         }
+
+        // sửa mặt hàng
+        $mh->suamathang($mathanghh);
+
 
         // hiển thị ds mặt hàng
         $mathang = $mh->laymathang();
