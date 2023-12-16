@@ -37,7 +37,8 @@
             <h4 class="text-info text-left">Thông tin đơn hàng</h4>
         </div>
         <div class="card-body">
-            <form action="post">
+            <form method="post" action="../public/index.php">
+
                 <!-- <input type="hidden" name="txtsl" value="<php echo $_SESSION['giohang']['solg']; ?>"> -->
                 <table class="table table-bordered">
                     <tr>
@@ -46,13 +47,16 @@
                         <th class="text-white bg-info">Số lượng</th>
                         <th class="text-white bg-info">Thành tiền</th>
                     </tr>
-                    <?php foreach ($giohang as $id => $mh): ?>
-                        <input type="hidden" name="txtsl" value="<?php echo $mh['soluong']; ?>">
+                    <?php
+                    foreach ($giohang as $id => $mh) : ?>
+
                         <tr>
                             <td><img width="50" src="../img/giohang/<?php echo $mh["hinhanh"]; ?>" alt=""> <?php echo $mh["tenmh"]; ?></td>
                             <td><?php echo number_format($mh["giaban"]); ?>đ</td>
                             <td><?php echo $mh['soluong']; ?></td>
                             <td><?php echo number_format($mh["thanhtien"]); ?>đ</td>
+                            <input type="hidden" name="txtid_mh" value="<?php echo $mh['id']; ?>">
+                            <input type="hidden" name="txtsl" value="<?php echo $mh['soluong']; ?>">
                         </tr>
                     <?php endforeach; ?>
                     <tr>

@@ -197,20 +197,55 @@ class MATHANG
         }
     }
     // Cập nhật số lượng
-    public function giamsoluong($id, $soluongmua)
-    {
+    // public function giamsoluong($id, $soluongmua)
+    // {
+    //     $dbcon = DATABASE::connect();
+    //     try {
+    //         $sql = "UPDATE mathang SET soluongton = soluongton - :soluongmua WHERE id = :id";
+    //         $cmd = $dbcon->prepare($sql);
+    //         $cmd->bindValue(":soluongmua", $soluongmua);
+    //         $cmd->bindValue(":id", $id);
+    //         $result = $cmd->execute();
+    //         return $result;
+    //     } catch (PDOException $e) {
+    //         $error_message = $e->getMessage();
+    //         // Xử lý lỗi truy vấn
+    //         echo "<p>Lỗi truy vấn: $error_message</p>";
+    //         exit();
+    //     }
+    // }
+
+    public function giamsoluong($id, $soluongmua) {
         $dbcon = DATABASE::connect();
-        try {
-            $sql = "UPDATE mathang SET soluongton=soluongton-:soluongmua WHERE id=:id";
-            $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":soluongmua", $soluongmua);
-            $cmd->bindValue(":id", $id);
-            $result = $cmd->execute();
-            return $result;
-        } catch (PDOException $e) {
-            $error_message = $e->getMessage();
-            echo "<p>Lỗi truy vấn: $error_message</p>";
-            exit();
+        // Lấy thông tin sản phẩm dựa trên id
+        $mathang= $this->laymathangtheoid($id);
+
+        // Kiểm tra nếu sản phẩm tồn tại
+        if ($mathang) {
+            // Kiểm tra nếu số lượng mua nhỏ hơn hoặc bằng số lượng tồn
+            if ($soluongmua <= $mathang['soluongton']) {
+                // Giảm số lượng tồn đi theo số lượng mua
+                $mathang['soluongton'] -= $soluongmua;
+
+                // Cập nhật số lượng tồn trong cơ sở dữ liệu
+                // Cách cập nhật này phụ thuộc vào cấu trúc cơ sở dữ liệu của bạn
+                // Dưới đây là một ví dụ giả định cập nhật thông qua SQL
+                $sql = "UPDATE mathang SET soluongton = :soluongton WHERE id = :id";
+                $params = array('soluongton' => $mathang['soluongton'], 'id' => $id);
+                // Tiến hành cập nhật thông qua đối tượng DATABASE
+                $dbcon->execute($sql, $params);
+
+                // Trả về true để cho biết số lượng đã được giảm thành công
+                return true;
+            } else {
+                // Nếu số lượng mua lớn hơn số lượng tồn, không thể giảm số lượng
+                // Trả về false để cho biết số lượng không được giảm
+                return false;
+            }
+        } else {
+            // Nếu sản phẩm không tồn tại, không thể giảm số lượng
+            // Trả về false để cho biết số lượng không được giảm
+            return false;
         }
     }
 
@@ -237,6 +272,23 @@ class MATHANG
         $dbcon = DATABASE::connect();
         try {
             $sql = "SELECT * FROM mathang ORDER BY luotmua DESC LIMIT 3";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
+
+    // Lấy mặt hàng hết số lượng tồn 
+    public function laymathanghethang()
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM mathang WHERE soluongton=0 ";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();

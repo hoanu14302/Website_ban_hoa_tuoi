@@ -188,6 +188,10 @@ switch ($action) {
         $donhangmoi->setghichu($ghichu);
         // thêm
         $dh->themdonhang($donhangmoi);
+
+        // Giảm số lượng sản phẩm
+    $mathang = $mh->giamsoluong($_POST["txtid_mh"], $_POST["txtsl"]);
+    
         //thêm đơn hàng chi tiết
         //$dhctmoi = new DONHANGCT();
         // $dhctmoi->setdonhang_id($_POST["txtid"]);
@@ -196,7 +200,7 @@ switch ($action) {
         // $dhctmoi->setghichu($ghichu);
         // $dhct->themdonhangct($dhctmoi);
         xoagiohang();
-        $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
+
         $mathang = $mh->laymathang();
         include("main.php");
         break;
