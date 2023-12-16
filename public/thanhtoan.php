@@ -73,13 +73,6 @@
                                 <?php echo number_format(tinhtiengiohang()); ?>đ
                             </td>
                         </tr>
-                        <th>Ghi chú</th>
-                            <td><textarea name="txtghichu" id="ghichu" cols="15" rows="5"></textarea>
-                        
-                        <!-- Trường ẩn để truyền ID người dùng -->
-                        <input type="hidden" name="txtid" value="ID_NGUOI_DUNG">
-                        <!-- Trường ẩn để truyền tổng tiền -->
-                        <input type="hidden" name="txttongtien" value="<?php echo tinhtiengiohang(); ?>">
                     </table>
                 </form>
             </div>

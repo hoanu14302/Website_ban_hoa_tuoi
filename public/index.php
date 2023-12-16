@@ -178,34 +178,17 @@ switch ($action) {
         }
         break;
     case "htdonhang":
-        // //thêm đơn hàng chi tiết
-        // $dhctmoi = new DONHANGCT();
-        // $dhctmoi->setdonhang_id($dh->getid());
-        // $dhctmoi->setmathang_id($_POST["txtid_mh"]);
-        // $dhctmoi->setdongia($_POST["txtdongia"]);
-        // $dhctmoi->setsoluong($_POST["txtsl"]);
-        // $dhctmoi->setthanhtien($_POST["txtthanhtien"]);
-        // $dhct->themdonhangct($dhctmoi);
-
-        // // Giảm số lượng sản phẩm
-        // $mathang = $mh->giamsoluong($_POST["txtid_mh"], $_POST["txtsl"]);
-        // xoagiohang();
-
-        // $mathang = $mh->laymathang();
-        // include("main.php");
-
-        $ghichu = isset($_POST["txtghichu"]) ? $_POST["txtghichu"] : "";
-        $id_mh = isset($_POST["txtid_mh"]) ? $_POST["txtid_mh"] : [];
         // Thêm đơn hàng
         $donhangmoi = new DONHANG();
         $ngay = date("Y-m-d");
         $donhangmoi->setnguoidung_id($_POST["txtid"]);
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
-        $donhangmoi->setghichu($_POST["txtghichu"]);
         // Thêm
         $dh->themdonhang($donhangmoi);
 
+        // $ghichu = isset($_POST["txtghichu"]) ? $_POST["txtghichu"] : "";
+        // $id_mh = isset($_POST["txtid_mh"]) ? $_POST["txtid_mh"] : [];
         // Thêm đơn hàng chi tiết và giảm số lượng sản phẩm
         // $so_luong_mh = count($_POST["txtid_mh"]);
         // for ($i = 0; $i < $so_luong_mh; $i++) {
