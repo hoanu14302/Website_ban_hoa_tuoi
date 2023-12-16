@@ -30,12 +30,13 @@ switch ($action) {
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
-            // if ($_SESSION["nguoidung"]["loai"] == 1 or  $_SESSION["nguoidung"]["loai"] == 2)
-            $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
-            $mathanghh = $mh->laymathanghethang();
-            include("main.php");
-            // } elseif( $_SESSION["nguoidung"]["loai"] == 3 ){
-            //     include("../../../public/main.php");
+            if ($_SESSION["nguoidung"]["loai"] == 1 || $_SESSION["nguoidung"]["loai"] == 2) {
+                $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
+                $mathanghh = $mh->laymathanghethang();
+                include("main.php");
+            } else {
+                include("login.php");
+            }
         } else {
             include("login.php");
         }
