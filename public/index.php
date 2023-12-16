@@ -196,7 +196,7 @@ switch ($action) {
         // $dhctmoi->setghichu($ghichu);
         // $dhct->themdonhangct($dhctmoi);
         xoagiohang();
-        // $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
+        $mathang = $mh->giamsoluong($_POST["txtid"], $_POST["txtsl"]);
         $mathang = $mh->laymathang();
         include("main.php");
         break;
