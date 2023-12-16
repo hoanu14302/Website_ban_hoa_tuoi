@@ -33,7 +33,10 @@ switch ($action) {
         $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
-
+        // Kiểm tra dữ liệu nhập liệu
+        if (empty($txttenmathang) || empty($txtmota) || empty($txtgianhap) || empty($txtgiaban) || empty($txtsoluong) || empty($optdanhmuc)) {
+            echo "Vui lòng nhập đầy đủ thông tin.";
+        }else {
         // xử lý thêm		
         $mathanghh = new MATHANG();
         $mathanghh->settenmh($_POST["txttenmathang"]);
@@ -45,7 +48,7 @@ switch ($action) {
         $mathanghh->sethinhanh($hinhanh);
         $mh->themmathang($mathanghh);
         $mathang = $mh->laymathang();
-        include("main.php");
+        include("main.php");}
         break;
     case "xoa":
         if (isset($_GET["id"])) {
