@@ -64,33 +64,6 @@ switch ($action) {
         $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
         include("main.php");
         break;
-    case "dangky":
-        include("register.php");
-        break;
-    case "xldangky":
-        $loai = $_POST["txtloai"];
-        //xử lý load ảnh
-        $hinhanh = basename($_FILES["fhinhanh"]["name"]); // đường dẫn ảnh lưu trong db
-        $duongdan = "../../img/users/" . $hinhanh; //nơi lưu file upload
-        move_uploaded_file($_FILES["fhinhanh"]["tmp_name"], $duongdan);
-        //xử lý thêm mặt hàng
-        $nguoidungmoi = new NGUOIDUNG();
-        $nguoidungmoi->setemail($_POST["txtemail"]);
-        $nguoidungmoi->setsodienthoai($_POST["txtsodienthoai"]);
-        $nguoidungmoi->setdiachi($_POST["txtdiachi"]);
-        $nguoidungmoi->setmatkhau($_POST["txtmatkhau"]);
-        $nguoidungmoi->sethoten($_POST["txthoten"]);
-        $nguoidungmoi->setloai($loai);
-        $nguoidungmoi->settrangthai($_POST["txttrangthai"]);
-        $nguoidungmoi->sethinhanh($hinhanh);
-        // thêm
-        $nd->themnguoidung($nguoidungmoi);
-        // load người dùng
-        $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($_POST["txtemail"]);
-
-        include("profile.php");
-        break;
-
     case "xoa":
         $mhxoa = new mathang();
         $mhxoa->setid($_GET["id"]);
