@@ -45,7 +45,7 @@ switch ($action) {
             echo "Email hoặc mật khẩu không đúng!";
             include("login.php");
         }
-        break;
+        
     }
     case "dangxuat":
         unset($_SESSION["nguoidung"]);
