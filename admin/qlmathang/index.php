@@ -33,36 +33,6 @@ switch ($action) {
         $hinhanh = "img/giohang/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan2 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan2);
-        // // Kiểm tra dữ liệu nhập liệu
-        // if (empty($_POST["txttenmathang"]) || empty($_POST["txtmota"]) || $_POST["txtgianhap"] == "0" || $_POST["txtgiaban"] == "0" || $_POST["txtsoluong"] == "0" || empty($_POST["optdanhmuc"])) {
-        //     echo "Vui lòng nhập đầy đủ thông tin.";
-        // }else {
-        // Khởi tạo mảng lưu trữ các thông báo lỗi
-        $errors = [];
-
-        // Kiểm tra và xử lý dữ liệu khi người dùng gửi form
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Kiểm tra và xử lý dữ liệu ở đây
-            // Kiểm tra nếu trường tên mặt hàng rỗng
-            if (empty($_POST["txttenmh"])) {
-                $errors[] = "Vui lòng nhập tên mặt hàng.";
-            }
-            // Kiểm tra nếu trường mô tả rỗng
-            if (empty($_POST["txtmota"])) {
-                $errors[] = "Vui lòng nhập mô tả mặt hàng.";
-            }
-
-            // Kiểm tra nếu trường giá bán rỗng hoặc không phải số
-            if ($_POST["txtgiaban"] == 0) {
-                $errors[] = "Vui lòng nhập giá bán hợp lệ.";
-            }
-
-            // Kiểm tra nếu trường số lượng tồn rỗng hoặc không phải số
-            if ($_POST["txtsoluongton"] == 0) {
-                $errors[] = "Vui lòng nhập số lượng tồn hợp lệ.";
-            }
-            // Nếu không có lỗi, tiến hành xử lý và cập nhật dữ liệu
-            if (empty($errors)) {
                 // xử lý thêm		
                 $mathanghh = new MATHANG();
                 $mathanghh->settenmh($_POST["txttenmathang"]);
@@ -73,17 +43,10 @@ switch ($action) {
                 $mathanghh->setdanhmuc_id($_POST["optdanhmuc"]);
                 $mathanghh->sethinhanh($hinhanh);
                 $mh->themmathang($mathanghh);
-            }
-            else {
-                // Hiển thị thông báo lỗi
-                foreach ($errors as $error) {
-                    echo $error . "<br>";
-                }
-            }
+            
             $mathang = $mh->laymathang();
             include("main.php");
             break;
-        }
     case "xoa":
         if (isset($_GET["id"])) {
             $mathanghh = new MATHANG();
