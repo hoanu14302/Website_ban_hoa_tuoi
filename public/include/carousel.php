@@ -14,7 +14,9 @@
                     <img src="../img/carousel/khuyenmai1.jpg" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/carousel/khuyenmai2.jpg" alt="" class="d-block w-100">
+                    <?php
+                    foreach ($chuongtrinhkhuyenmai as $km) : ?>
+                        <img src="../img/carousel/<?php echo $km["hinhanhkm"] ?>" alt="" class="d-block w-100"> <?php endforeach ?>
                 </div>
                 <div class="carousel-item">
                     <img src="../img/carousel/khuyenmai3.jpg" alt="" class="d-block w-100">
