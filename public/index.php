@@ -184,49 +184,45 @@ switch ($action) {
         $donhangmoi->setnguoidung_id($_POST["txtid"]);
         $donhangmoi->setngay($ngay);
         $donhangmoi->settongtien($_POST["txttongtien"]);
+
+        $ghichu = $_POST["txtghichu"];
+        $donhangmoi->setghichu($ghichu);
         // Thêm
         $dh->themdonhang($donhangmoi);
 
-        // $ghichu = isset($_POST["txtghichu"]) ? $_POST["txtghichu"] : "";
-        // $id_mh = isset($_POST["txtid_mh"]) ? $_POST["txtid_mh"] : [];
         // Thêm đơn hàng chi tiết và giảm số lượng sản phẩm
-        // $so_luong_mh = count($_POST["txtid_mh"]);
-        // for ($i = 0; $i < $so_luong_mh; $i++) {
-        //     $dhctmoi = new DONHANGCT();
-        //     $dhctmoi->setdonhang_id($dh->getid());
-        //     $dhctmoi->setmathang_id($id_mh[$i]);
-        //     $dhctmoi->setdongia($_POST["txtdongia"][$i]);
-        //     $dhctmoi->setsoluong($_POST["txtsl"][$i]);
-        //     $dhctmoi->setthanhtien($_POST["txtthanhtien"][$i]);
-        //     $dhct->themdonhangct($dhctmoi);
 
-        //     // Giảm số lượng sản phẩm
-        //     giam_soluong_sanpham($id_mh[$i], $_POST["txtsl"][$i]);
-        // }
+        // Lấy ID của đơn hàng vừa được tạo
+        $dbcon = DATABASE::connect();
+
+        $donhang_id = $dbcon->lastInsertId();
+
+        $txtid = $_POST["txtid_mh"]; // Lưu giá trị của $_POST["txtid"] vào biến $txtid
+
+        if (!is_array($txtid)) {
+            $txtid = [$txtid]; // Chuyển đổi giá trị $txtid thành một mảng
+        }
+
+        $so_luong_id = count($txtid); // Đếm số lượng phần tử trong mảng $txtid
+
+        for ($i = 0; $i < $so_luong_id; $i++) {
+            $id = $txtid[$i];
+            $dhctmoi = new DONHANGCT();
+            $dhctmoi->setdonhang_id($donhang_id);
+            $dhctmoi->setmathang_id($id);
+            $dhctmoi->setdongia($_POST["txtdongia"][$i]);
+            $dhctmoi->setsoluong($_POST["txtsl"][$i]);
+            $dhctmoi->setthanhtien($_POST["txtthanhtien"][$i]);
+            $dhct->themdonhangct($dhctmoi);
+
+            // Giảm số lượng sản phẩm
+            $mh->giamsoluong($id, $_POST["txtsl"][$i]);
+        }
 
         xoagiohang();
 
         $mathang = $mh->laymathang();
         include("main.php");
-
-
-        // function giam_soluong_sanpham($id_mh, $soluong)
-        // {
-        //     session_start();
-
-        //     if (isset($_SESSION['giohang'])) {
-        //         foreach ($_SESSION['giohang'] as $id => $mh) {
-        //             if ($mh['id'] === $id_mh) {
-        //                 $_SESSION['giohang'][$id]['soluong'] -= $soluong;
-
-        //                 if ($_SESSION['giohang'][$id]['soluong'] === 0) {
-        //                     unset($_SESSION['giohang'][$id]);
-        //                 }
-        //                 break;
-        //             }
-        //         }
-        //     }
-        // }
 
         break;
     case "search":
