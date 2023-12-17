@@ -105,8 +105,6 @@ switch ($action) {
 
         // sửa mặt hàng
         $mh->suamathang($mathanghh);
-
-
         // hiển thị ds mặt hàng
         $mathang = $mh->laymathang();
         include("main.php");

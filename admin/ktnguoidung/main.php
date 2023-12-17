@@ -14,7 +14,9 @@
         foreach ($mathanghh as $m) :
         ?>
             <tr>
-                <td><?php echo $m["tenmh"]; ?>
+                <td><a href="index.php?action=chitiet&id=<?php echo $m['id']; ?>">
+                    <?php echo $m["tenmh"]; ?>
+                </a>
                 </td>
                 <td><?php echo number_format($m["giaban"]); ?></td>
                 <td><?php echo $m["soluongton"]; ?></td>

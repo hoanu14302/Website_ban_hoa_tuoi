@@ -26,7 +26,6 @@ switch ($action) {
     case "dangnhap":
         include("login.php");
         break;
-
     case "xldangnhap":
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
@@ -83,20 +82,19 @@ switch ($action) {
         if (isset($_GET["id"])) {
             $m = $mh->laymathangtheoid($_GET["id"]);
             $danhmuc = $dm->laydanhmuc();
-            include("../qlmathang/updateform.php");
+            include("updateform.php");
         } else {
             $mathang = $mh->laymathang();
             include("main.php");
         }
         break;
     case "xulysua": // lưu dữ liệu sửa mới vào db
-
         // gán dữ liệu từ form
         $mhsua = new mathang();
         $mhsua->setid($_POST["txtid"]);
         $mhsua->setmota($_POST["txtmota"]);
         $mhsua->setdanhmuc_id($_POST["optdanhmuc"]);
-        $mhsua->settenmh($_POST["txttenmh"]);
+        $mhsua->settenmh($_POST["txttenhang"]);
         $mhsua->setgiaban($_POST["txtgiaban"]);
         $mhsua->setsoluongton($_POST["txtsoluongton"]);
         $mhsua->sethinhanh($_POST["txthinhcu"]);
@@ -122,7 +120,15 @@ switch ($action) {
         $mathanghh = $mh->laymathanghethang();
         include("main.php");
         break;
-
+    case "chitiet":
+        if (isset($_GET["id"])) {
+            $m = $mh->laymathangtheoid($_GET["id"]);
+            include("../qlmathang/detail.php");
+        } else {
+            $mathang = $mh->laymathang();
+            include("main.php");
+        }
+        break;
     default:
         break;
 }
