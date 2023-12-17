@@ -8,7 +8,6 @@ require("../model/donhang.php");
 require("../model/detail_donhang.php");
 require("../model/chuongtrinhkhuyenmai.php");
 
-
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
 $mh = new MATHANG();
@@ -18,6 +17,8 @@ $nd = new NGUOIDUNG();
 $nguoidung = $nd->laydanhsachnguoidung();
 $dh = new DONHANG();
 $dhct = new DONHANGCT();
+$km = new CHUONGTRINHKHUYENMAI();
+$chuongtrinhkhuyenmai = $km->laykhuyenmai();
 // Biến $isLogin cho biết người dùng đăng nhập chưa
 $isLogin = isset($_SESSION["nguoidung"]);
 
