@@ -7,7 +7,7 @@ require("../../model/nguoidung.php");
 require("../../model/quyen.php");
 require("../../model/donhang.php");
 require("../../model/mathang.php");
-require("../../model/donhangct.php");
+require("../../model/detail_donhang.php");
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
