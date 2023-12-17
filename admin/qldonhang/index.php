@@ -7,7 +7,7 @@ require("../../model/nguoidung.php");
 require("../../model/quyen.php");
 require("../../model/donhang.php");
 require("../../model/mathang.php");
-
+require("../../model/donhangct.php");
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
@@ -18,6 +18,7 @@ if (isset($_REQUEST["action"])) {
 $dh = new DONHANG();
 $nd = new NGUOIDUNG();
 $mh = new MATHANG();
+$dhct = new DONHANGCT();
 switch ($action) {
     case "xem":
         $donhang = $dh->laydonhang();
