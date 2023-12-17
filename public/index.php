@@ -195,7 +195,6 @@ switch ($action) {
         // Lấy ID của đơn hàng vừa được tạo
         $dbcon = DATABASE::connect();
 
-        $donhang_id = $dbcon->lastInsertId();
 
         $txtid = $_POST["txtid_mh"]; // Lưu giá trị của $_POST["txtid"] vào biến $txtid
 
@@ -206,6 +205,8 @@ switch ($action) {
         $so_luong_id = count($txtid); // Đếm số lượng phần tử trong mảng $txtid
 
         for ($i = 0; $i < $so_luong_id; $i++) {
+            $donhang_id = $dbcon->lastInsertId();
+
             $id = $txtid[$i];
             $dhctmoi = new DONHANGCT();
             $dhctmoi->setdonhang_id($donhang_id);
