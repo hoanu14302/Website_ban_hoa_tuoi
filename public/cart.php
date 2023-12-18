@@ -44,6 +44,40 @@ if (demhangtronggio() == 0) { ?>
                 <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
             </div>
         </div>
+
+        <h3>Đơn hàng đã đặt</h3>
+        <table class="table table-hover">
+            <tr>
+                <th class="text-info">Hình ảnh</th>
+                <th class="text-info">Tên hoa</th>
+                <th class="text-info">Số lượng</th>
+                <th class="text-info">Thành tiền</th>
+                <th class="text-info">Trạng thái</th>
+            </tr>
+            <?php
+            foreach ($donhang as $h) :
+                foreach ($nguoidung as $n) :
+                    foreach ($dh_dadat as $d) :
+                        foreach ($mathang as $m) :
+                            if ($d["mathang_id"] == $m["id"] && $h["nguoidung_id"] == $n["id"] && $h["id"] == $d["donhang_id"]) {
+            ?>
+                                <tr>
+                                    <!-- <a href="index.php?action=chitiet&id=<php echo $d['id']; ?>"><php echo $d["id"]; ?></a> -->
+                                    <td><img width="40px" class="thumnail" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt=""> </td>
+                                    <td><?php echo $m["tenmh"]; ?></td>
+                                    <td><?php echo $d["soluong"]; ?></td>
+                                    <td><?php echo $d["thanhtien"]; ?></td>
+                                    <td class="text-success">Đã thanh toán</td>
+                                </tr>
+            <?php
+                            }
+                        endforeach;
+                    endforeach;
+                endforeach;
+            endforeach;
+            ?>
+        </table>
+
     </form>
 <?php } //end if 
 ?>
