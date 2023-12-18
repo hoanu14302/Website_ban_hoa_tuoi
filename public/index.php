@@ -111,7 +111,9 @@ switch ($action) {
             if ($_SESSION["nguoidung"]["loai"] == "3") {
                 $mathang = $mh->laymathang();
                 include("main.php");
-            } else {
+            } else if ($_SESSION["nguoidung"]["loai"] == "1" || $_SESSION["nguoidung"]["loai"] == "2"  ) {
+                $mathang = $mh->laymathang();
+                include("../admin/index.php");
             }
         } else {
             include("dangnhap.php");
