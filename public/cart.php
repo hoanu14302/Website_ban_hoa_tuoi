@@ -68,7 +68,7 @@ if (demhangtronggio() == 0) { ?>
                                     <td><img width="40px" class="thumnail" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt=""> </td>
                                     <td><?php echo $m["tenmh"]; ?></td>
                                     <td><?php echo $d["soluong"]; ?></td>
-                                    <td><?php echo $d["thanhtien"]; ?></td>
+                                    <td><?php echo $m["thanhtien"]; ?></td>
                                     <td class="text-success">Đã thanh toán</td>
                                 </tr>
             <?php
