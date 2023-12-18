@@ -76,10 +76,24 @@ switch ($action) {
             themhangvaogio($id, $soluong);
         }
         $giohang = laygiohang();
+
+        $dh_dadat = $dhct->laydonhangct();
+        $mathang = $mh->laymathang();
+        $donhang = $dh->laydonhang();
+        $nguoidung = $nd->laydanhsachnguoidung();
+
+
         include("cart.php");
         break;
     case "xemgiohang":
         $giohang = laygiohang();
+
+        $dh_dadat = $dhct->laydonhangct();
+        $mathang = $mh->laymathang();
+        $donhang = $dh->laydonhang();
+        $nguoidung = $nd->laydanhsachnguoidung();
+
+
         include("cart.php");
         break;
     case "capnhatgio":
@@ -93,11 +107,22 @@ switch ($action) {
             }
         }
         $giohang = laygiohang();
+
+        $dh_dadat = $dhct->laydonhangct();
+        $mathang = $mh->laymathang();
+        $donhang = $dh->laydonhang();
+        $nguoidung = $nd->laydanhsachnguoidung();
+        
         include("cart.php");
         break;
     case "xoagiohang":
         xoagiohang();
         $giohang = laygiohang();
+        $dh_dadat = $dhct->laydonhangct();
+        $mathang = $mh->laymathang();
+        $donhang = $dh->laydonhang();
+        $nguoidung = $nd->laydanhsachnguoidung();
+
         include("cart.php");
         break;
     case "dangnhap":
