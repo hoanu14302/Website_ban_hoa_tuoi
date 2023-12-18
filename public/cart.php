@@ -48,6 +48,7 @@ if (demhangtronggio() == 0) { ?>
         <h3 class="text-info">Đơn hàng đã đặt</h3>
         <table class="table table-hover">
             <tr>
+                <th class="text-dark">Đơn hàng</th>
                 <th class="text-dark">Hình ảnh</th>
                 <th class="text-dark">Tên hoa</th>
                 <th class="text-dark">Số lượng</th>
@@ -63,6 +64,7 @@ if (demhangtronggio() == 0) { ?>
             ?>
                                 <tr>
                                     <!-- <a href="index.php?action=chitiet&id=<php echo $d['id']; ?>"><php echo $d["id"]; ?></a> -->
+                                    <td><?php echo $d["donhang_id"]; ?></td>
                                     <td><img width="40px" class="thumnail" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt=""> </td>
                                     <td><?php echo $m["tenmh"]; ?></td>
                                     <td><?php echo $d["soluong"]; ?></td>
