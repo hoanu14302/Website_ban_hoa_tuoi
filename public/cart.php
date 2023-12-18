@@ -52,7 +52,7 @@ if (demhangtronggio() == 0) { ?>
                 <th class="text-dark">Hình ảnh</th>
                 <th class="text-dark">Tên hoa</th>
                 <th class="text-dark">Số lượng</th>
-                <th class="text-dark">Thành tiền</th>
+                <th class="text-dark">Đơn giá</th>
                 <th class="text-dark">Trạng thái</th>
             </tr>
             <?php
@@ -68,7 +68,7 @@ if (demhangtronggio() == 0) { ?>
                                     <td><img width="40px" class="thumnail" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt=""> </td>
                                     <td><?php echo $m["tenmh"]; ?></td>
                                     <td><?php echo $d["soluong"]; ?></td>
-                                    <td><?php echo $m["thanhtien"]; ?></td>
+                                    <td><?php echo $m["giaban"]; ?></td>
                                     <td class="text-success">Đã thanh toán</td>
                                 </tr>
             <?php
