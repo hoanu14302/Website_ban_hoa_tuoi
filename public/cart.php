@@ -3,6 +3,43 @@
 if (demhangtronggio() == 0) { ?>
     <h3 class="text-info">Giỏ hàng rỗng!</h3>
     <p>Vui lòng chọn sản phẩm...</p>
+
+    <hr>
+    <h3 class="text-info">Đơn hàng đã đặt</h3>
+    <table class="table table-hover">
+        <tr>
+            <th class="text-dark">Đơn hàng</th>
+            <th class="text-dark">Hình ảnh</th>
+            <th class="text-dark">Tên hoa</th>
+            <th class="text-dark">Số lượng</th>
+            <th class="text-dark">Đơn giá</th>
+            <th class="text-dark">Trạng thái</th>
+        </tr>
+        <?php
+        foreach ($donhang as $h) :
+            foreach ($nguoidung as $n) :
+                foreach ($dh_dadat as $d) :
+                    foreach ($mathang as $m) :
+                        if ($d["mathang_id"] == $m["id"] && $h["nguoidung_id"] == $n["id"] && $h["id"] == $d["donhang_id"]) {
+        ?>
+                            <tr>
+                                <!-- <a href="index.php?action=chitiet&id=<php echo $d['id']; ?>"><php echo $d["id"]; ?></a> -->
+                                <td><?php echo $d["donhang_id"]; ?></td>
+                                <td><img width="40px" class="thumnail" src="../img/giohang/<?php echo $m["hinhanh"]; ?>" alt=""> </td>
+                                <td><?php echo $m["tenmh"]; ?></td>
+                                <td><?php echo $d["soluong"]; ?></td>
+                                <td><?php echo $m["giaban"]; ?></td>
+                                <td class="text-success">Đã thanh toán</td>
+                            </tr>
+        <?php
+                        }
+                    endforeach;
+                endforeach;
+            endforeach;
+        endforeach;
+        ?>
+    </table>
+
 <?php } else { ?>
     <h3 class="text-info">Giỏ hàng của bạn: </h3>
     <form action="index.php">
@@ -44,7 +81,7 @@ if (demhangtronggio() == 0) { ?>
                 <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
             </div>
         </div>
-            <hr>
+        <hr>
         <h3 class="text-info">Đơn hàng đã đặt</h3>
         <table class="table table-hover">
             <tr>
