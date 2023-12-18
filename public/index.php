@@ -138,7 +138,7 @@ switch ($action) {
                 include("main.php");
             } else if ($_SESSION["nguoidung"]["loai"] == "1") {
                 $mathang = $mh->laymathang();
-                include("../admin/index.php");
+                header("Location: ../admin/index.php");
             }
         } else {
             include("dangnhap.php");
