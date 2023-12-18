@@ -44,15 +44,15 @@ if (demhangtronggio() == 0) { ?>
                 <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
             </div>
         </div>
-
-        <h3>Đơn hàng đã đặt</h3>
+            <hr>
+        <h3 class="text-info">Đơn hàng đã đặt</h3>
         <table class="table table-hover">
             <tr>
-                <th class="text-info">Hình ảnh</th>
-                <th class="text-info">Tên hoa</th>
-                <th class="text-info">Số lượng</th>
-                <th class="text-info">Thành tiền</th>
-                <th class="text-info">Trạng thái</th>
+                <th class="text-dark">Hình ảnh</th>
+                <th class="text-dark">Tên hoa</th>
+                <th class="text-dark">Số lượng</th>
+                <th class="text-dark">Thành tiền</th>
+                <th class="text-dark">Trạng thái</th>
             </tr>
             <?php
             foreach ($donhang as $h) :
