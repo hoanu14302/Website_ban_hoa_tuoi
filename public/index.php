@@ -133,10 +133,10 @@ switch ($action) {
         $matkhau = $_POST["txtmatkhau"];
         if ($nd->kiemtranguoidunghople($email, $matkhau) == TRUE) {
             $_SESSION["nguoidung"] = $nd->laythongtinnguoidung($email);
-            if ($_SESSION["nguoidung"]["loai"] == "3") {
+            if ($_SESSION["nguoidung"]["loai"] == "2") {
                 $mathang = $mh->laymathang();
                 include("main.php");
-            } else if ($_SESSION["nguoidung"]["loai"] == "1" || $_SESSION["nguoidung"]["loai"] == "2"  ) {
+            } else if ($_SESSION["nguoidung"]["loai"] == "1") {
                 $mathang = $mh->laymathang();
                 include("../admin/index.php");
             }
