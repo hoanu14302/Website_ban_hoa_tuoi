@@ -25,7 +25,7 @@
     </div>
 
     <div>
-      <h4 class="text-primary">Mô tả hoa: </h4>
+      <h4 class="text-primary">Mô tả sản phẩm: </h4>
       <p><?php echo $mhct["mota"]; ?></p>
     </div>
     <br>
@@ -54,7 +54,7 @@
             ?>
             <!-- Product image-->
             <a href="?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
-              <img class="card-img-top" src="../img/hoa/<?php echo $tendm ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
+              <img class="card-img-top" src="../img/sanpham/<?php echo $tendm ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" />
             </a>
             <!-- Product details-->
             <div class="card-body p-4">

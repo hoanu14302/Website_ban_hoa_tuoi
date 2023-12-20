@@ -37,7 +37,7 @@ $pagedMathang = array_slice($mathang, $startIndex, $itemsPerPage);
                     ?>
                     <!-- Product image-->
                     <a href="index.php?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
-                        <img class="card-img-top" src="../img/hoa/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" 
+                        <img class="card-img-top" src="../img/sanpham/<?php echo $tendm; ?>/<?php echo $m["hinhanh"]; ?>" 
                         alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;"/>
                     </a>
                     <!-- Product details-->
@@ -65,7 +65,7 @@ $pagedMathang = array_slice($mathang, $startIndex, $itemsPerPage);
     <?php
         endforeach;
     } else {
-        echo "<p>Loại hoa này hiện chưa có sản phẩm. Vui lòng xem phân loại khác...</p>";
+        echo "<p>Loại sản phẩm này hiện chưa có. Vui lòng xem phân loại khác...</p>";
     }
     ?>
 </div>

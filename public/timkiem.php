@@ -20,7 +20,7 @@
                                 ?>
                                 <!-- Product image-->
                                 <a href="index.php?action=detail&danhmuc_id=<?php echo $m["danhmuc_id"]; ?>&id=<?php echo $m["id"]; ?>">
-                                    <img class="card-img-top" src="../img/hoa/<?php echo $dm["tendm"]; ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;" />
+                                    <img class="card-img-top" src="../img/sanpham/<?php echo $dm["tendm"]; ?>/<?php echo $m["hinhanh"]; ?>" alt="<?php echo $m["tenmh"]; ?>" style="height: 300px;" />
                                 </a>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
