@@ -52,7 +52,7 @@
                             <?php } else { ?>
                                 <a href="index.php?action=dangnhap" class="btn btn-outline-light"><i class="bi bi-person"></i> </a>&nbsp;
                             <?php } ?>
-                            <a href="index.php?action=xemgiohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i><span class="badge bg-danger text-white ms-1 rounded-pill"><?php echo demsoluongtronggio(); ?></span></a>
+                            <a href="index.php?action=giohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i><span class="badge bg-danger text-white ms-1 rounded-pill"><?php echo demsoluongtronggio(); ?></span></a>
                         </div>
                     </div>
                 </div>
@@ -61,5 +61,5 @@
     </nav>
 
     <!-- Section-->
-    <section class="py-5">
+    <section class="py-5" style="background-color: #f1f1f1;">
         <div class="container px-4 px-lg-5 mt-1">
