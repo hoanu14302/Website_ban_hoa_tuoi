@@ -8,6 +8,9 @@ require("../../model/quyen.php");
 require("../../model/donhang.php");
 require("../../model/mathang.php");
 require("../../model/detail_donhang.php");
+
+$n = new NGUOIDUNG();
+
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
@@ -23,7 +26,6 @@ switch ($action) {
     case "xem":
         $donhang = $dh->laydonhang();
         $nguoidung = $nd->laydanhsachnguoidung();
-
         include("main.php");
         break;
     case "chitiet":
@@ -36,7 +38,17 @@ switch ($action) {
             include("detail.php");
         }
         break;
-
+    case "capnhat": // lưu dữ liệu sửa mới vào db
+        // gán dữ liệu từ form
+        $donhang_id = $_GET["id"];
+        $trangthai = $_GET["trangthai"];
+        // sửa
+        $dh->capnhattrangthai($donhang_id, $trangthai);        
+        // load danh sách
+        $donhang = $dh->laydonhang();
+        $nguoidung = $nd->laydanhsachnguoidung();
+        include("main.php");
+        break;
     default:
         break;
 }

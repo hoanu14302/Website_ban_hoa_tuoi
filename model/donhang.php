@@ -6,6 +6,8 @@ class DONHANG
     private $ngay;
     private $tongtien;
     private $ghichu;
+    private $trangthai;
+
 
     public function getid()
     {
@@ -53,6 +55,15 @@ class DONHANG
     {
         $this->ghichu = $value;
     }
+    public function gettrangthai()
+    {
+        return $this->trangthai;
+    }
+
+    public function settrangthai($value)
+    {
+        $this->trangthai = $value;
+    }
 
     // Lấy danh sách
     public function laydonhang()
@@ -70,7 +81,7 @@ class DONHANG
             exit();
         }
     }
-    
+
 
 
     // Lấy danh mục theo id
@@ -100,7 +111,7 @@ class DONHANG
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":nguoidung_id", $donhang->nguoidung_id);
             $cmd->bindValue(":ngay", $donhang->ngay);
-            $cmd->bindValue(":tongtien",$tongtien);
+            $cmd->bindValue(":tongtien", $tongtien);
             $cmd->bindValue(":ghichu", $donhang->ghichu);
             $result = $cmd->execute();
             return $result;
@@ -142,5 +153,22 @@ class DONHANG
             echo "<p>Lỗi truy vấn: $error_message</p>";
             exit();
         }
+    }
+
+    public function capnhattrangthai($donhang_id, $trangthai)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "UPDATE donhang SET trangthai=:trangthai WHERE id=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":trangthai", $trangthai);
+            $cmd->bindValue(":id", $donhang_id);
+            $result = $cmd->execute();
+            return $result;}
+            catch (PDOException $e) {
+                $error_message = $e->getMessage();
+                echo "<p>Lỗi truy vấn: $error_message</p>";
+                exit();
+            }
     }
 }
