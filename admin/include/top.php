@@ -8,7 +8,7 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 
-	<title>Trang quản trị - Elko Garden</title>
+	<title>Trang quản trị - Clovia shop</title>
 
 	<link href="../include/css/app.css" rel="stylesheet">
 	<script src="../include/js/app.js"></script>
@@ -24,7 +24,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="../../admin/ktnguoidung/">
-					<span class="align-middle">Elko Garden</span>
+					<span class="align-middle">Clovia shop</span>
 				</a>
 
 				<ul class="sidebar-nav">

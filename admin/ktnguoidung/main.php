@@ -1,9 +1,9 @@
 <?php include("../include/top.php"); ?>
 <div>
-    <h4 class="text-info">Danh sách hoa hết hàng</h4>
+    <h4 class="text-info">Danh sách sản phẩm hết hàng</h4>
     <table class="table table-hover">
         <tr>
-            <th>Tên hoa</th>
+            <th>Tên sản phẩm</th>
             <th>Gía bán</th>
             <th class="text-danger">Số lượng</th>
             <th>Hình ảnh</th>

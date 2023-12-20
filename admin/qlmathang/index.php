@@ -25,7 +25,7 @@ switch ($action) {
     case "xulythem":
         // xử lý file upload
         // Dẫn nơi lưu theo danh mục
-        $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+        $hinhanh = "img/sanpham/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
         $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
         move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
 
@@ -93,7 +93,7 @@ switch ($action) {
         if ($_FILES["filehinhanh"]["name"] != "") {
             // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
             // Dẫn nơi lưu theo danh mục
-            $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $hinhanh = "img/sanpham/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
             $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
             move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
 

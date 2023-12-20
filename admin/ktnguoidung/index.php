@@ -104,7 +104,7 @@ switch ($action) {
         if ($_FILES["filehinhanh"]["name"] != "") {
             //xử lý load ảnh
             // Dẫn nơi lưu theo danh mục
-            $hinhanh = "img/hoa/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+            $hinhanh = "img/sanpham/" . $_POST["optdanhmuc"] . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
             $duongdan1 = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
             move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan1);
 

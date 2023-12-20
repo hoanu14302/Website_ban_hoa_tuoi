@@ -6,7 +6,7 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0 mx-auto">
-								<a class="text-muted" href=""><strong>Elko Garden</strong></a>
+								<a class="text-muted" href=""><strong>Clovia shop</strong></a>
 							</p>
 						</div>
 						<div class="col-6 text-end">

@@ -10,7 +10,7 @@ if (demhangtronggio() == 0) { ?>
         <tr>
             <th class="text-dark">Đơn hàng</th>
             <th class="text-dark">Hình ảnh</th>
-            <th class="text-dark">Tên hoa</th>
+            <th class="text-dark">Tên sản phẩm</th>
             <th class="text-dark">Số lượng</th>
             <th class="text-dark">Đơn giá</th>
             <th class="text-dark">Trạng thái</th>
@@ -87,7 +87,7 @@ if (demhangtronggio() == 0) { ?>
             <tr>
                 <th class="text-dark">Đơn hàng</th>
                 <th class="text-dark">Hình ảnh</th>
-                <th class="text-dark">Tên hoa</th>
+                <th class="text-dark">Tên sản phẩm</th>
                 <th class="text-dark">Số lượng</th>
                 <th class="text-dark">Đơn giá</th>
                 <th class="text-dark">Trạng thái</th>
