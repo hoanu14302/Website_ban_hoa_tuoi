@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-7">
 				<div class="my-3">
-					<label>Loại hoa</label>
+					<label>Loại sản phẩm</label>
 					<select class="form-control" name="optdanhmuc">
 						<?php foreach ($danhmuc as $dm) { ?>
 							<option value="<?php echo $dm["id"]; ?>" <?php if ($dm["id"] == $m["danhmuc_id"]) echo "selected"; ?>><?php echo $dm["tendm"]; ?></option>
@@ -15,7 +15,7 @@
 					</select>
 				</div>
 				<div class="my-3">
-					<label>Tên hoa</label>
+					<label>Tên sản phẩm</label>
 					<input class="form-control" type="text" name="txttenhang" required value="<?php echo $m["tenmh"]; ?>">
 				</div>
 			</div>

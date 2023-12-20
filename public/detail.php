@@ -4,7 +4,7 @@
   <div class="col-sm-9">
     <h3 class="text-dark"><?php echo $mhct["tenmh"]; ?></h3>
 
-    <div><img width="500px" src="../img/hoa/<?php echo $tendm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
+    <div><img width="500px" src="../img/sanpham/<?php echo $tendm ?>/<?php echo $mhct["hinhanh"]; ?>"></div>
 
     <div>
       <h4 class="text-primary">Giá bán:
