@@ -1,7 +1,6 @@
 <div class="d-flex flex-column">
 	<?php
 	$count = 0; // Biến đếm số lượng sản phẩm
-	
 		foreach ($mathangxemnhieu as $x) :
 			foreach ($danhmuc as $dm):
 				if ($x["danhmuc_id"] == $dm["id"] AND $count >= 3) break; // Nếu đã hiển thị 3 sản phẩm, thoát khỏi vòng lặp
